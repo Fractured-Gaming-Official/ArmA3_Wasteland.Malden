@@ -1,0 +1,24 @@
+SMS Install Instructions:
+
+1. Place the "vip_cmn" and "vip_sms" folders in the ROOT of your mission folder. If "vip_cmn" already exists, use whichever folder is the latest version.
+2. In the mission's Description.ext, add (or insert, if the cfgFunctions class already exists):
+
+
+	class CfgFunctions {
+
+		#include "vip_cmn\fn\vip_cmn_fnc.hpp"
+		#include "vip_sms\fn\vip_sms_fnc.hpp"
+	};
+
+	#include "vip_cmn\resource\vip_dlg_defaults.hpp"
+	#include "vip_sms\resource\vip_sms_dlg.hpp"
+
+
+3. Done!
+
+***WARNING***: As of Arma 3 1.40, there is still no way to remove default object actions (such as "Deactivate mine"). This means that if a player is of the "Engineer" or "Explosive Specialist" class and are carrying a Toolkit, they can remove the mines using the default Arma system, which BREAKS the scripts of SMS. Use at your own caution, and design your missions accordingly.
+
+
+Using the mines:
+
+See diary entry in-game.
