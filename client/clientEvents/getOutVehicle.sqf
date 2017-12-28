@@ -21,3 +21,4 @@ if (!unitIsUAV _veh) then
 
 { _veh removeAction _x } forEach (_veh getVariable ["A3W_serviceBeaconActions", []]);
 _veh setVariable ["A3W_serviceBeaconActions", nil];
+© 2017 GitHub, Inc.

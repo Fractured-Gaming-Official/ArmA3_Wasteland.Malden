@@ -124,14 +124,14 @@ if (_class call fn_hasInventory) then
 	// Save weapons & ammo
 	//_weapons = (getWeaponCargo _veh) call cargoToPairs;
 	//_magazines = _veh call fn_magazineAmmoCargo;
-	//_items = (getItemCargo _veh) call cargoToPairs;
-	//_backpacks = (getBackpackCargo _veh) call cargoToPairs;
-
-	private _cargo = _veh call fn_containerCargoToPairs;
-	_weapons = _cargo select 0;
-	_magazines = _cargo select 1;
-	_items = _cargo select 2;
-	_backpacks = _cargo select 3;
+ 	//_items = (getItemCargo _veh) call cargoToPairs;
+ 	//_backpacks = (getBackpackCargo _veh) call cargoToPairs;
+ 
+ 	private _cargo = _veh call fn_containerCargoToPairs;
+ 	_weapons = _cargo select 0;
+ 	_magazines = _cargo select 1;
+ 	_items = _cargo select 2;
+ 	_backpacks = _cargo select 3;
 };
 
 // _turretMags is deprecated, leave empty
@@ -142,14 +142,11 @@ _turretMags3 = _veh call fn_getPylonsAmmo;
 // deprecated
 /*
 _hasDoorGuns = isClass (configFile >> "CfgVehicles" >> _class >> "Turrets" >> "RightDoorGun");
-
 _turrets = allTurrets [_veh, false];
-
 if !(_class isKindOf "B_Heli_Transport_03_unarmed_F") then
 {
 	_turrets = [[-1]] + _turrets; // only add driver turret if not unarmed Huron, otherwise flares get saved twice
 };
-
 if (_hasDoorGuns) then
 {
 	// remove left door turret, because its mags are already returned by magazinesAmmo
@@ -159,13 +156,10 @@ if (_hasDoorGuns) then
 			_turrets set [_forEachIndex, 1];
 		};
 	} forEach _turrets;
-
 	_turrets = _turrets - [1];
 };
-
 {
 	_path = _x;
-
 	{
 		if ([_turretMags, _x, -1] call fn_getFromPairs == -1 || _hasDoorGuns) then
 		{

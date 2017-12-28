@@ -41,7 +41,7 @@ if (!_uavConnect) then
 				["You can't enter vehicles being used by enemy groups.", 5] call mf_notify_client;
 				breakOut "getInVehicle";
 			};
-		} forEach crew _veh;
+		};forEach crew _veh;
 	};
 };
 
