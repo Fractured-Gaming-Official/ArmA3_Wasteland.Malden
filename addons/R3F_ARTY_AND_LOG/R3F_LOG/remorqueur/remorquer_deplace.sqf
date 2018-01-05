@@ -8,6 +8,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define VEHICLE_UNLOCKED(VEH) (locked (VEH) < 2 || (VEH) getVariable ["ownerUID","0"] isEqualTo getPlayerUID player)
+
 if (R3F_LOG_mutex_local_verrou) then
 {
 	player globalChat STR_R3F_LOG_mutex_action_en_cours;
@@ -28,7 +30,7 @@ else
 	{
 		_remorqueur = _remorqueur select 0;
 
-		if (alive _remorqueur && isNull (_remorqueur getVariable "R3F_LOG_remorque") && ((velocity _remorqueur) call BIS_fnc_magnitude < 6) && (getPos _remorqueur select 2 < 2) && !(_remorqueur getVariable "R3F_LOG_disabled")) then
+		if (alive _remorqueur && isNull (_remorqueur getVariable "R3F_LOG_remorque") && (vectorMagnitude velocity _remorqueur < 6) && (getPos _remorqueur select 2 < 2) && VEHICLE_UNLOCKED(_remorqueur) && !(_remorqueur getVariable "R3F_LOG_disabled")) then
 		{
 			// On mémorise sur le réseau que le véhicule remorque quelque chose
 			_remorqueur setVariable ["R3F_LOG_remorque", _objet, true];
@@ -75,7 +77,7 @@ else
 
 			// Faire relacher l'objet au joueur (si il l'a dans "les mains")
 			R3F_LOG_joueur_deplace_objet = objNull;
-			player playMove "AinvPknlMstpSlayWrflDnon_medic";
+			[player, "AinvPknlMstpSlayWrflDnon_medic"] call switchMoveGlobal;
 			sleep 2;
 
 			// Attacher à l'arrière du véhicule au ras du sol
@@ -116,6 +118,11 @@ else
 			};
 
 			sleep 5;
+
+			if (isNull objectParent player) then
+			{
+				[player, ""] call switchMoveGlobal;
+			};
 		};
 	};
 
