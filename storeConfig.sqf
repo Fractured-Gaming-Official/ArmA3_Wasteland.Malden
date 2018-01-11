@@ -50,7 +50,7 @@ rifleArray = compileFinal str
 
 	["TRG-20 Carbine", "arifle_TRG20_F", 150],
 	["TRG-21 Rifle ", "arifle_TRG21_F", 200],
-<<<<<<< HEAD
+
 	["TRG-21 EGLM Rifle", "arifle_TRG21_GL_F", 450],
 
 	["Katiba Carbine", "arifle_Katiba_C_F", 400],
@@ -83,7 +83,7 @@ rifleArray = compileFinal str
 	["Type 115 Rifle", "arifle_ARX_blk_F", 1000],
 	["Type 115 Rifle (Hex)", "arifle_ARX_hex_F", 1000],
 	["Type 115 Rifle (G Hex)", "arifle_ARX_ghex_F", 1000],
-=======
+
 	["TRG-21 EGLM Rifle", "arifle_TRG21_GL_F", 250],
 
 	["Katiba Carbine", "arifle_Katiba_C_F", 150],
@@ -116,7 +116,7 @@ rifleArray = compileFinal str
 	["Type 115 Stealth Rifle", "arifle_ARX_blk_F", 300],
 	["Type 115 Stealth Rifle (Hex)", "arifle_ARX_hex_F", 300],
 	["Type 115 Stealth Rifle (G Hex)", "arifle_ARX_ghex_F", 300],
->>>>>>> upstream/dev
+
 
 	["AKS-74U Carbine", "arifle_AKS_F", 150],
 	["AKM Rifle", "arifle_AKM_F", 200],
@@ -131,7 +131,7 @@ rifleArray = compileFinal str
 	["Mk18 ABR Rifle", "srifle_EBR_F", 850],
 
 	// DLC
-<<<<<<< HEAD
+
 	["CMR-76 Rifle", "srifle_DMR_07_blk_F", 700],
 	["CMR-76 Rifle (Hex)", "srifle_DMR_07_hex_F", 700],
 	["CMR-76 Rifle (G Hex)", "srifle_DMR_07_ghex_F", 700],
@@ -144,7 +144,7 @@ rifleArray = compileFinal str
 	["Mk-I EMR Rifle", "srifle_DMR_03_F", 800],
 	["Mk-I EMR Rifle (Camo)", "srifle_DMR_03_multicam_F", 800],
 	["Mk-I EMR Rifle (Khaki)", "srifle_DMR_03_khaki_F", 800],
-=======
+
 	["CMR-76 Stealth Rifle", "srifle_DMR_07_blk_F", 400],
 	["CMR-76 Stealth Rifle (Hex)", "srifle_DMR_07_hex_F", 400],
 	["CMR-76 Stealth Rifle (G Hex)", "srifle_DMR_07_ghex_F", 400],
@@ -157,7 +157,7 @@ rifleArray = compileFinal str
 	["Mk-I EMR Rifle", "srifle_DMR_03_F", 500],
 	["Mk-I EMR Rifle (Camo)", "srifle_DMR_03_multicam_F", 500],
 	["Mk-I EMR Rifle (Khaki)", "srifle_DMR_03_khaki_F", 500],
->>>>>>> upstream/dev
+
 	["Mk-I EMR Rifle (Sand)", "srifle_DMR_03_tan_F", 500],
 	["Mk-I EMR Rifle (Woodland)", "srifle_DMR_03_woodland_F", 800],
 	["MAR-10 Rifle", "srifle_DMR_02_F", 1450],
@@ -1382,8 +1382,8 @@ colorsArray = compileFinal str
 		"APC_Wheeled_03_base_F",
 		[
 			["Guerilla 1 (Gorgon)", ["Guerilla_01"]],
-+			["Guerilla 2 (Gorgon)", ["Guerilla_02"]],
-+			["Guerilla 3 (Gorgon)", ["Guerilla_03"]],
+			["Guerilla 2 (Gorgon)", ["Guerilla_02"]],
+			["Guerilla 3 (Gorgon)", ["Guerilla_03"]],
 			["Tan (Gorgon)", [
 				[0, _gorgonDir + "apc_wheeled_03_ext_co.paa"],
 				[1, _gorgonDir + "apc_wheeled_03_ext2_co.paa"],
