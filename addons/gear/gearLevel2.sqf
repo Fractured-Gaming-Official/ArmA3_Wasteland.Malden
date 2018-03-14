@@ -1,10 +1,10 @@
 //@file Version: 1.2
-//@file Name: gearLevel1.sqf
+//@file Name: gearLevel2.sqf
 //@file Author: Cael817, based of something i found
 private ["_player"];
 _player = _this;
 
-_player setVariable ["cmoney", (_player getVariable "cmoney") + 100, true];
+_player setVariable ["cmoney", (_player getVariable "cmoney") + 200, true];
 
 {_player removeWeapon _x} forEach weapons _player;
 {_player removeMagazine _x} forEach magazines _player;
@@ -48,6 +48,7 @@ _player addWeapon "hgun_ACPC2_F"; //Handgun
 
 switch (true) do
 {
+	//Medic
 	case (["_medic_", typeOf _player] call fn_findString != -1):
 	{
 		_player addItem "MediKit";
@@ -62,9 +63,12 @@ switch (true) do
 
 		//_player addMagazines ["", 0]; //Add secondary Weapon magazines first so one gets loaded
 		//_player addWeapon ""; //Secondary Weapon (Launcher slot)
-
+		
+		_player addMagazines ["SmokeShell", 2]; //Grenades
+		
 		_player selectWeapon "arifle_TRG21_GL_F"; //Select Active Weapon
 	};
+	//Engineer
 	case (["_engineer_", typeOf _player] call fn_findString != -1):
 	{
 		_player addItem "ToolKit";
@@ -74,14 +78,17 @@ switch (true) do
 		_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 2]; //Add primary weapon magazines first so one gets loaded
 		_player addWeapon "arifle_TRG20_F"; //Primary Weapon
 		_player addPrimaryWeaponItem "optic_Holosight_smg"; //Primary Weapon Attachments
-		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
+		_player addPrimaryWeaponItem "muzzle_snds_M"; //Primary Weapon Attachments
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 
 		//_player addMagazines ["", 0]; //Add secondary Weapon magazines first so one gets loaded
 		//_player addWeapon ""; //Secondary Weapon (Launcher slot)
-
+		
+		_player addMagazines ["MiniGrenade", 2]; //Grenades
+		
 		_player selectWeapon "arifle_TRG20_F"; //Select Active Weapon
 	};
+	//Sniper
 	case (["_sniper_", typeOf _player] call fn_findString != -1):
 	{
 		_player addWeapon "Rangefinder";
@@ -90,15 +97,18 @@ switch (true) do
 		_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 2]; //Add primary weapon magazines first so one gets loaded
 		_player addWeapon "arifle_TRG21_F"; //Primary Weapon
 		_player addPrimaryWeaponItem "optic_Holosight_smg"; //Primary Weapon Attachments
-		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
+		_player addPrimaryWeaponItem "muzzle_snds_M"; //Primary Weapon Attachments
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 
 		//_player addMagazines ["", 0]; //Add secondary Weapon magazines first so one gets loaded
 		//_player addWeapon ""; //Secondary Weapon (Launcher slot)
+		
+		_player addMagazines ["ClaymoreDirectionalMine_Remote_Mag", 1]; //Grenades
 
 		_player selectWeapon "arifle_TRG21_F"; //Select Active Weapon
 	};
-		case (["_diver_", typeOf _player] call fn_findString != -1):
+	//Diver
+	case (["_diver_", typeOf _player] call fn_findString != -1):
 	{
 		_player addVest "V_RebreatherIA";
 		_player addGoggles "G_Diving";
@@ -106,7 +116,7 @@ switch (true) do
 		
 		_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 2]; //Add primary weapon magazines first so one gets loaded
 		_player addWeapon "arifle_SDAR_F"; //Primary Weapon
-		//_player addPrimaryWeaponItem "optic_Holosight_smg"; //Primary Weapon Attachments
+		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 

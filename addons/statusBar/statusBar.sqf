@@ -15,12 +15,12 @@ ZGO_StatusEnabled = true; // LOL ^^
 
 [] spawn
 {
-	uiSleep 5;
+	uiSleep 1;
 	_uid = getPlayerUID player;
 
 	while {true} do
 	{
-		uisleep 5;
+		uisleep 1;
 		if !(ZGO_StatusEnabled) then
 		{
 			_rscLayer = "RscWastelandStatusBar" call BIS_fnc_rscLayer;

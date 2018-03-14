@@ -39,7 +39,7 @@ if (!_uavConnect) then
 			{
 				moveOut player;
 				["You can't enter vehicles being used by enemy groups.", 5] call mf_notify_client;
-
+				
 				// ejection bug workaround
 				if (!isNull objectParent player) then
 				{
@@ -48,7 +48,7 @@ if (!_uavConnect) then
 
 				breakOut "getInVehicle";
 			};
-		};forEach crew _veh;
+		} forEach crew _veh;
 	};
 };
 

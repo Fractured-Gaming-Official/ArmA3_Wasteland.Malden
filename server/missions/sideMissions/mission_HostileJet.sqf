@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "sideMissionDefines.sqf"
 
-private ["_vehicleClass", "_vehicle", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2"];
+private ["_vehicleClass", "_vehicle", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_smoke"];
 
 _setupVars =
 {
@@ -21,11 +21,11 @@ _setupObjects =
 
 	_vehicleClass = if (missionDifficultyHard) then
 	{
-		selectRandom ["B_Plane_CAS_01_dynamicLoadout_F", "O_Plane_CAS_02_dynamicLoadout_F", "O_T_VTOL_02_infantry_dynamicLoadout_F"];
+		selectRandom [["Plane_Fighter_04_Base_F", "GryphonM"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anFire"]];
 	}
 	else
 	{
-		selectRandom [""B_Plane_CAS_01_dynamicLoadout_F", "O_Plane_CAS_02_dynamicLoadout_F", "O_T_VTOL_02_infantry_dynamicLoadout_F"];
+		selectRandom [["Plane_Fighter_04_Base_F", "GryphonM"], ["O_Plane_CAS_02_dynamicLoadout_F", "NeoMission"], ["B_Plane_CAS_01_dynamicLoadout_F", "WipeoutMission"], ["O_T_VTOL_02_infantry_dynamicLoadout_F", "Xi'anFire"]];
 	};
 
 	_createVehicle =
@@ -65,17 +65,7 @@ _setupObjects =
 
 		switch (true) do
 		{
-			case (_type isKindOf "Heli_Transport_01_base_F"):
-			{
-				// these choppers have 2 turrets so we need 2 gunners
-				_soldier = [_aiGroup, _position] call createRandomSoldierC;
-				_soldier moveInTurret [_vehicle, [1]];
-
-				_soldier = [_aiGroup, _position] call createRandomSoldierC;
-				_soldier moveInTurret [_vehicle, [2]];
-			};
-
-			case (_type isKindOf "Heli_Attack_01_base_F" || _type isKindOf "Heli_Attack_02_base_F"):
+			case (_type isKindOf "O_T_VTOL_02_infantry_dynamicLoadout_F"):
 			{
 				// these choppers need 1 gunner
 				_soldier = [_aiGroup, _position] call createRandomSoldierC;
@@ -83,7 +73,7 @@ _setupObjects =
 			};
 		};
 
-		// remove flares because it overpowers AI choppers
+		/*// remove flares because it overpowers AI choppers
 		if (_type isKindOf "Air") then
 		{
 			{
@@ -92,7 +82,7 @@ _setupObjects =
 					_vehicle removeMagazinesTurret [_x, [-1]];
 				};
 			} forEach getArray (configFile >> "CfgVehicles" >> _type >> "magazines");
-		};
+		};*/
 
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
@@ -105,7 +95,7 @@ _setupObjects =
 	_leader = effectiveCommander _vehicle;
 	_aiGroup selectLeader _leader;
 
-	_aiGroup setCombatMode "RED"; // Defensive behaviour
+	_aiGroup setCombatMode "YELLOW"; // Defensive behaviour
 	_aiGroup setBehaviour "COMBAT";
 	_aiGroup setFormation "STAG COLUMN";
 
@@ -118,7 +108,7 @@ _setupObjects =
 		_waypoint = _aiGroup addWaypoint [markerPos (_x select 0), 0];
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
-		_waypoint setWaypointCombatMode "RED";
+		_waypoint setWaypointCombatMode "YELLOW";
 		_waypoint setWaypointBehaviour "COMBAT";
 		_waypoint setWaypointFormation "STAG COLUMN";
 		_waypoint setWaypointSpeed _speedMode;
@@ -129,7 +119,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "picture");
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_vehicleClass param [0,""]) >> "displayName");
 
-	_missionHintText = format ["An armed <t color='%2'>%1</t> is patrolling the island. Intercept it and recover its cargo!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["An Experimental <t color='%2'>%1</t> is patrolling the island. Intercept it and recover its cargo!", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -160,13 +150,18 @@ _successExec =
 
 		_box1 = createVehicle ["Box_NATO_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box1 setDir random 360;
-		[_box1, "mission_USSpecial"] call randomCrateLoadOut;
+		[_box1, "mission_USSpecial"] call fn_refillbox;
 
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir random 360;
 		[_box2, "mission_USLaunchers"] randomCrateLoadOut;
+		
+		
 	};
-
+	
+	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
+	_smoke = setDir random 360;
+	
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
 

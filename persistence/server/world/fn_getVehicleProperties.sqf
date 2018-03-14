@@ -77,6 +77,12 @@ if (_ownerName != "") then
 	_variables pushBack ["ownerName", toArray _ownerName];
 };
 
+private _artiCount = [_veh getVariable "artillery"] param [0,0,[0]];
+if (_artiCount >= 1) then
+{
+	_variables pushBack ["artillery", 1]; // capped at 1 for safety
+};
+
 private _locked = 1 max locked _veh; // default vanilla state is always 1, so we ignore 0's
 
 _textures = [];
@@ -129,14 +135,14 @@ if (_class call fn_hasInventory) then
 	// Save weapons & ammo
 	//_weapons = (getWeaponCargo _veh) call cargoToPairs;
 	//_magazines = _veh call fn_magazineAmmoCargo;
- 	//_items = (getItemCargo _veh) call cargoToPairs;
- 	//_backpacks = (getBackpackCargo _veh) call cargoToPairs;
- 
- 	private _cargo = _veh call fn_containerCargoToPairs;
- 	_weapons = _cargo select 0;
- 	_magazines = _cargo select 1;
- 	_items = _cargo select 2;
- 	_backpacks = _cargo select 3;
+	//_items = (getItemCargo _veh) call cargoToPairs;
+	//_backpacks = (getBackpackCargo _veh) call cargoToPairs;
+
+	private _cargo = _veh call fn_containerCargoToPairs;
+	_weapons = _cargo select 0;
+	_magazines = _cargo select 1;
+	_items = _cargo select 2;
+	_backpacks = _cargo select 3;
 };
 
 // _turretMags is deprecated, leave empty

@@ -2,7 +2,7 @@ respawn="BASE";
 respawnDelay=7;
 disabledAI=1;
 disableChannels[] = {{0,false,true}, {2,true,true}}; // 0 = global, 1 = side, 2 = command // new syntax: {{channel<number>, disableText<bool>, disableVoice<bool>}, ...};
-// side chat is disabled for indies in client\preInit.sqf
+// side voice is disabled for indies in client\preInit.sqf
 joinUnassigned = 0;
 enableItemsDropping = 0;
 forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
@@ -23,7 +23,7 @@ class Header
 	maxPlayers=146; // 144 players, 2 headless clients
 };
 author="Fractured-Gaming.com - A3Wasteland.com"; // it would be great if you could keep "A3Wasteland.com" in the name, like "YourName and A3Wasteland.com" :)
-onLoadName = "Fractured Wasteland Malden"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
+onLoadName = "Fractured Wasteland Stratis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
 onLoadMission = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
 overviewText = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
 overviewTextLocked = "Wasteland is a harsh survival sandbox where two teams and independent players fight for survival.";
@@ -47,6 +47,7 @@ briefing = 0; // if 0, skip Continue button
 #include "client\systems\common.hpp"
 #include "client\items\warchest\dialog.hpp"
 #include "client\items\atm\atm_gui.hpp"
+#include "client\items\artillery\artillery_gui.hpp"
 #include "client\actions\gui.hpp"
 #include "addons\far_revive\reviveBlank_gui.hpp"
 #include "client\systems\playerMenu\dialog\player_settings.hpp"
@@ -69,10 +70,10 @@ briefing = 0; // if 0, skip Continue button
 #include "addons\outlw_magrepack\config.hpp"
 #include "addons\gui\gui.hpp"
 #include "addons\parking\list_simple_menu.hpp"
-#include "addons\taw_vd\dialog.hpp"
 #include "addons\beacondetector\sound\cfgsounds.hpp"
 #include "addons\laptop\downloadData.hpp"
 #include "addons\TOParmaInfo\dialog\TOParmaInfo_dialog.hpp"
+#include "addons\CHVD\dialog.hpp"
 
 
 class RscTitles
@@ -97,15 +98,15 @@ class CfgDebriefing
 	};
 };
 
+
 class CfgFunctions
 {
-	#include "addons\taw_vd\CfgFunctions.hpp"
 	class A3W
 	{
 		#include "client\CfgFunctions.hpp"
 		#include "server\CfgFunctions.hpp"
 	};
-
+	#include "addons\CHVD\CfgFunctions.hpp"
 };
 
 class CfgNotifications

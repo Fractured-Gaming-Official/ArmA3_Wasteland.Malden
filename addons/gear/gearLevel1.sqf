@@ -15,7 +15,7 @@ removeBackpack _player;
 //removeGoggles _player;
 //removeHeadgear _player;
 
-//_player addBackpack "B_Carryall_oli"; //BackPack
+//_player addBackpack "B_FieldPack_cbr"; //BackPack
 //_player addUniform ""; //Uniform (must be supported by side)
 //_player addVest ""; //Vest
 _player linkItem "NVGoggles"; //Nightvision, "NVGoggles"
@@ -48,6 +48,7 @@ _player addWeapon "hgun_ACPC2_F"; //Handgun
 
 switch (true) do
 {
+	//Medic
 	case (["_medic_", typeOf _player] call fn_findString != -1):
 	{
 		_player addItem "MediKit";
@@ -65,6 +66,7 @@ switch (true) do
 
 		_player selectWeapon "arifle_TRG21_GL_F"; //Select Active Weapon
 	};
+	//Engineer
 	case (["_engineer_", typeOf _player] call fn_findString != -1):
 	{
 		_player addItem "ToolKit";
@@ -82,6 +84,7 @@ switch (true) do
 
 		_player selectWeapon "arifle_TRG20_F"; //Select Active Weapon
 	};
+	//Sniper
 	case (["_sniper_", typeOf _player] call fn_findString != -1):
 	{
 		_player addWeapon "Rangefinder";
@@ -98,7 +101,8 @@ switch (true) do
 
 		_player selectWeapon "arifle_TRG21_F"; //Select Active Weapon
 	};
-		case (["_diver_", typeOf _player] call fn_findString != -1):
+	//Diver
+	case (["_diver_", typeOf _player] call fn_findString != -1):
 	{
 		_player addVest "V_RebreatherIA";
 		_player addGoggles "G_Diving";

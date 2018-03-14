@@ -51,7 +51,7 @@ if (!isDedicated) then
 	{
 		if (hasInterface) then // Normal player
 		{
-			9999 cutText ["Welcome to Fractured Wasteland, please wait for your client to initialize", "BLACK", 0.01];
+			9999 cutText ["Welcome to A3Wasteland, please wait for your client to initialize", "BLACK", 0.01];
 
 			waitUntil {!isNull player};
 			player setVariable ["playerSpawning", true, true];
@@ -102,6 +102,7 @@ if (hasInterface || isServer) then
 	[] execVM "addons\laptop\init.sqf";
 	[] execVM "addons\Grenades\initGrenades.sqf";
 	[] execVM "addons\outOfBounds\outOfBounds.sqf";
+	[] execVM "addons\Fuel\Fuelconsumption.sqf";
 	
 	if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
