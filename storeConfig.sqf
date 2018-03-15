@@ -50,10 +50,6 @@ rifleArray = compileFinal str
 
 	["TRG-20 Carbine", "arifle_TRG20_F", 150],
 	["TRG-21 Rifle ", "arifle_TRG21_F", 200],
-<<<<<<< HEAD
-=======
-
->>>>>>> 5161b6233a215e4cdcd762ab13cff0a2d1a6835a
 	["TRG-21 EGLM Rifle", "arifle_TRG21_GL_F", 450],
 
 	["Katiba Carbine", "arifle_Katiba_C_F", 400],
@@ -86,43 +82,6 @@ rifleArray = compileFinal str
 	["Type 115 Rifle", "arifle_ARX_blk_F", 1000],
 	["Type 115 Rifle (Hex)", "arifle_ARX_hex_F", 1000],
 	["Type 115 Rifle (G Hex)", "arifle_ARX_ghex_F", 1000],
-<<<<<<< HEAD
-=======
-
-	["TRG-21 EGLM Rifle", "arifle_TRG21_GL_F", 250],
-
-	["Katiba Carbine", "arifle_Katiba_C_F", 150],
-	["Katiba Rifle", "arifle_Katiba_F", 200],
-	["Katiba GL Rifle", "arifle_Katiba_GL_F", 250],
-
-	["MX Carbine", "arifle_MXC_F", 150],
-	["MX Carbine (Black)", "arifle_MXC_Black_F", 150],
-	["MX Carbine (Khaki)", "arifle_MXC_khk_F", 150, "noDLC"],
-	["MX Rifle", "arifle_MX_F", 200],
-	["MX Rifle (Black)", "arifle_MX_Black_F", 200],
-	["MX Rifle (Khaki)", "arifle_MX_khk_F", 200, "noDLC"],
-	["MX 3GL Rifle", "arifle_MX_GL_F", 250],
-	["MX 3GL Rifle (Black)", "arifle_MX_GL_Black_F", 250],
-	["MX 3GL Rifle (Khaki)", "arifle_MX_GL_khk_F", 250, "noDLC"],
-
-	["SPAR-16 Rifle", "arifle_SPAR_01_blk_F", 200],
-	["SPAR-16 Rifle (Khaki)", "arifle_SPAR_01_khk_F", 200],
-	["SPAR-16 Rifle (Sand)", "arifle_SPAR_01_snd_F", 200],
-	["SPAR-16 GL Rifle", "arifle_SPAR_01_GL_blk_F", 250],
-	["SPAR-16 GL Rifle (Khaki)", "arifle_SPAR_01_GL_khk_F", 250],
-	["SPAR-16 GL Rifle (Sand)", "arifle_SPAR_01_GL_snd_F", 250],
-
-	["CAR-95 Rifle", "arifle_CTAR_blk_F", 200],
-	["CAR-95 Rifle (Hex)", "arifle_CTAR_hex_F", 200],
-	["CAR-95 Rifle (G Hex)", "arifle_CTAR_ghex_F", 200],
-	["CAR-95 GL Rifle", "arifle_CTAR_GL_blk_F", 250],
-	["CAR-95 GL Rifle (Hex)", "arifle_CTAR_GL_hex_F", 250],
-	["CAR-95 GL Rifle (G Hex)", "arifle_CTAR_GL_ghex_F", 250],
-	["Type 115 Stealth Rifle", "arifle_ARX_blk_F", 300],
-	["Type 115 Stealth Rifle (Hex)", "arifle_ARX_hex_F", 300],
-	["Type 115 Stealth Rifle (G Hex)", "arifle_ARX_ghex_F", 300],
-
->>>>>>> 5161b6233a215e4cdcd762ab13cff0a2d1a6835a
 
 	["AKS-74U Carbine", "arifle_AKS_F", 150],
 	["AKM Rifle", "arifle_AKM_F", 200],
@@ -137,10 +96,6 @@ rifleArray = compileFinal str
 	["Mk18 ABR Rifle", "srifle_EBR_F", 850],
 
 	// DLC
-<<<<<<< HEAD
-=======
-
->>>>>>> 5161b6233a215e4cdcd762ab13cff0a2d1a6835a
 	["CMR-76 Rifle", "srifle_DMR_07_blk_F", 700],
 	["CMR-76 Rifle (Hex)", "srifle_DMR_07_hex_F", 700],
 	["CMR-76 Rifle (G Hex)", "srifle_DMR_07_ghex_F", 700],
@@ -153,23 +108,6 @@ rifleArray = compileFinal str
 	["Mk-I EMR Rifle", "srifle_DMR_03_F", 800],
 	["Mk-I EMR Rifle (Camo)", "srifle_DMR_03_multicam_F", 800],
 	["Mk-I EMR Rifle (Khaki)", "srifle_DMR_03_khaki_F", 800],
-<<<<<<< HEAD
-=======
-
-	["CMR-76 Stealth Rifle", "srifle_DMR_07_blk_F", 400],
-	["CMR-76 Stealth Rifle (Hex)", "srifle_DMR_07_hex_F", 400],
-	["CMR-76 Stealth Rifle (G Hex)", "srifle_DMR_07_ghex_F", 400],
-	["SPAR-17 Rifle", "arifle_SPAR_03_blk_F", 450],
-	["SPAR-17 Rifle (Khaki)", "arifle_SPAR_03_khk_F", 450],
-	["SPAR-17 Rifle (Sand)", "arifle_SPAR_03_snd_F", 450],
-
-	["Mk14 Rifle (Camo)", "srifle_DMR_06_camo_F", 500],
-	["Mk14 Rifle (Olive)", "srifle_DMR_06_olive_F", 500],
-	["Mk-I EMR Rifle", "srifle_DMR_03_F", 500],
-	["Mk-I EMR Rifle (Camo)", "srifle_DMR_03_multicam_F", 500],
-	["Mk-I EMR Rifle (Khaki)", "srifle_DMR_03_khaki_F", 500],
-
->>>>>>> 5161b6233a215e4cdcd762ab13cff0a2d1a6835a
 	["Mk-I EMR Rifle (Sand)", "srifle_DMR_03_tan_F", 500],
 	["Mk-I EMR Rifle (Woodland)", "srifle_DMR_03_woodland_F", 800],
 	["MAR-10 Rifle", "srifle_DMR_02_F", 1450],
