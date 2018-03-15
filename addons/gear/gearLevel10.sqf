@@ -15,14 +15,14 @@ removeBackpack _player;
 //removeGoggles _player;
 //removeHeadgear _player;
 
-//_player addBackpack "B_Carryall_oli"; //BackPack
+_player addBackpack "B_Carryall_oli"; //BackPack
 //_player addUniform ""; //Uniform (must be supported by side)
 _player addVest "V_PlateCarrier2_rgr"; //Vest
 _player linkItem "NVGoggles"; //Nightvision, "NVGoggles"
 _player linkItem "ItemGPS"; //GPS, "ItemGPS"
 _player addWeapon "Binocular"; //Binoculars
 _player addMagazines ["HandGrenade", 2]; //Grenades
-_player addItem ["FirstAidKit", 2]; //Any other stuff that goes in inventory if there is space
+_player addItem "FirstAidKit"; //Any other stuff that goes in inventory if there is space
 //_player addItem "Medikit"; //Any other stuff that goes in inventory if there is space
 //_player addItem "ToolKit"; //Any other stuff that goes in inventory if there is space
 //_player addItem ""; //Any other stuff that goes in inventory if there is space
@@ -63,8 +63,8 @@ switch (true) do
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 
-		//_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
-		//_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
+		_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
+		_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
 		
 		_player addMagazines ["SmokeShell", 4]; //Grenades
 		
@@ -84,11 +84,11 @@ switch (true) do
 		_player addPrimaryWeaponItem "muzzle_snds_H_MG_blk_F"; //Primary Weapon Attachments
 		//_player addPrimaryWeaponItem ""; //Primary Weapon Attachments
 
-		//_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
-		//_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
+		_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
+		_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
 		
 		_player addMagazines ["MiniGrenade", 2]; //Grenades
-		_player addMagazines ["M6 SLAM Mine", 2]; //Grenades
+		_player addMagazines ["SLAMDirectionalMine_Wire_Mag", 2]; //Grenades
 		_player addMagazines ["ATMine_Range_Mag", 1]; //Grenades
 		
 		_player selectWeapon "arifle_MXC_F"; //Select Active Weapon
@@ -104,10 +104,10 @@ switch (true) do
 		_player addWeapon "srifle_EBR_F"; //Primary Weapon
 		_player addPrimaryWeaponItem "optic_DMS"; //Primary Weapon Attachments
 		_player addPrimaryWeaponItem "muzzle_snds_B"; //Primary Weapon Attachments
-		//_player addPrimaryWeaponItem "bipod_01_F_blk"; //Primary Weapon Attachments
+		_player addPrimaryWeaponItem "bipod_01_F_blk"; //Primary Weapon Attachments
 
-		//_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
-		//_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
+		_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
+		_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
 		
 		_player addMagazines ["APERSTripMine_Wire_Mag", 2]; //Grenades
 		_player addMagazines ["ClaymoreDirectionalMine_Remote_Mag", 2]; //Grenades
