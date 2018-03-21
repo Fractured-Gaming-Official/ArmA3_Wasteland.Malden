@@ -15,14 +15,14 @@ removeBackpack _player;
 //removeGoggles _player;
 //removeHeadgear _player;
 
-//_player addBackpack "B_Carryall_oli"; //BackPack
+_player addBackpack "B_Carryall_oli"; //BackPack
 //_player addUniform ""; //Uniform (must be supported by side)
 _player addVest "V_HarnessO_brn"; //Vest
 _player linkItem "NVGoggles"; //Nightvision, "NVGoggles"
 _player linkItem "ItemGPS"; //GPS, "ItemGPS"
 _player addWeapon "Binocular"; //Binoculars
 _player addMagazines ["HandGrenade", 2]; //Grenades
-_player addItem ["FirstAidKit", 2]; //Any other stuff that goes in inventory if there is space
+_player addItem "FirstAidKit"; //Any other stuff that goes in inventory if there is space
 //_player addItem "Medikit"; //Any other stuff that goes in inventory if there is space
 //_player addItem "ToolKit"; //Any other stuff that goes in inventory if there is space
 //_player addItem ""; //Any other stuff that goes in inventory if there is space

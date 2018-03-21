@@ -15,7 +15,7 @@ removeBackpack _player;
 //removeGoggles _player;
 //removeHeadgear _player;
 
-//_player addBackpack "B_Carryall_oli"; //BackPack
+_player addBackpack "B_Carryall_oli"; //BackPack
 //_player addUniform ""; //Uniform (must be supported by side)
 //_player addVest ""; //Vest
 _player linkItem "NVGoggles"; //Nightvision, "NVGoggles"
