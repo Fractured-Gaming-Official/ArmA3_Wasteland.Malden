@@ -9,7 +9,7 @@
 if (!isServer) exitwith {};
 #include "MainMissionDefines.sqf";
 
-private ["_Patrol", "_convoys", "_vehChoices", "_vehClasses", "_createVehicle", "_vehicles", "_veh2", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2", "_box3", "_Mortar"];
+private ["_Patrol", "_convoys", "_vehChoices", "_vehClasses", "_createVehicle", "_vehicles", "_veh2", "_leader", "_speedMode", "_waypoint", "_vehicleName", "vehicleName2", "_numWaypoints", "_Mortar", _box1", "_box2", "_box3"];
 
 _setupVars =
 {
@@ -22,24 +22,42 @@ _setupVars =
 	// Choices per vehicle : Min = 1, Max = infinite
 	_Patrol =
 	[
+		// Easy
+		[
+			"Light Patrol", // Marker text
+			[
+				[ // NATO convoy
+					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"], // Veh 1
+					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"] // Veh 2
+				],
+				[ // CSAT convoy
+					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"], // Veh 1
+					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"] // Veh 2
+				],
+				[ // AAF convoy
+					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F"], // Veh 1
+					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F"] // Veh 2
+				]
+			]
+		],
 		// Medium
 		[
 			"APC Patrol", // Marker text
 			[
-				[ // Tracked convoy 1
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"], // Veh 1
-					["B_APC_Tracked_01_rcws_F", "B_T_APC_Tracked_01_rcws_F"], // Veh 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"] // Veh 3
+				[ // NATO convoy
+					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"], // Veh 1
+					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F"], // Veh 2
+					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F"] // Veh 3
 				],
-				[ // Wheeled convoy
-					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"], // Veh 1
-					["O_T_APC_Wheeled_02_rcws_ghex_F", "O_APC_Wheeled_02_rcws_F"], // Veh 2
-					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"] // Veh 4
+				[ // CSAT convoy
+					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"], // Veh 1
+					["O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F"], // Veh 2
+					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"] // Veh 3
 				],
-				[ // Tracked Convoy 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"], // Veh 1
-					["B_T_APC_Tracked_01_CRV_F", "B_APC_Tracked_01_CRV_F"], // Veh 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"] // Veh 3
+				[ // AAF convoy
+					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F"], // Veh 1
+					["I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F"], // Veh 2
+					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F"] // Veh 3
 				]
 			]
 		],
@@ -47,20 +65,20 @@ _setupVars =
 		[
 			"Armored Patrol", // Marker text
 			[
-				[ // Tracked convoy 1
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"], // Veh 1
-					["I_MBT_03_cannon_F", "O_MBT_02_cannon_F", "O_T_MBT_02_cannon_ghex_F"], // Veh 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"] // Veh 3
+				[ // NATO convoy
+					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F"], // Veh 1
+					["B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"], // Veh 2
+					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F"] // Veh 3
 				],
-				[ // Wheeled convoy
-					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"], // Veh 1
-					["O_T_APC_Wheeled_02_rcws_ghex_F", "O_APC_Wheeled_02_rcws_F"], // Veh 2
-					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"] // Veh 4
+				[ // CSAT convoy
+					["O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F"], // Veh 1
+					["O_MBT_02_cannon_F"], // Veh 2
+					["O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F"] // Veh 3
 				],
-				[ // Tracked Convoy 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"], // Veh 1
-					["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F" ], // Veh 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"] // Veh 3
+				[ // AAF convoy
+					["I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F"], // Veh 1
+					["I_MBT_03_cannon_F"], // Veh 2
+					["I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F"] // Veh 3
 				]
 			]
 		],
@@ -68,20 +86,23 @@ _setupVars =
 		[
 			"Anti Air Patrol", // Marker text
 			[
-				[ // Tracked convoy 1
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"], // Veh 1
-					["B_T_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F"], // Veh 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"] // Veh 3
+				[ // NATO convoy
+					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"], // Veh 1
+					["B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"], // Veh 2
+					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"], // Veh 3
+					["B_APC_Wheeled_01_cannon_F", "B_APC_Tracked_01_rcws_F", "B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F", "B_MBT_01_TUSK_F"] // Veh 4
 				],
-				[ // Wheeled convoy
-					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"], // Veh 1
-					["B_T_APC_Tracked_01_AA_F", "B_APC_Tracked_01_AA_F"], // Veh 2
-					["B_APC_Wheeled_01_cannon_F", "B_T_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"] // Veh 4
+				[ // CSAT convoy
+					["O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F", "O_MBT_02_cannon_F"], // Veh 1
+					["O_APC_Tracked_02_AA_F", "O_MBT_02_cannon_F"], // Veh 2
+					["O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F", "O_MBT_02_cannon_F"], // Veh 3
+					["O_APC_Wheeled_02_rcws_F", "O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F", "O_MBT_02_cannon_F"] // Veh 4
 				],
-				[ // Tracked Convoy 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"], // Veh 1
-					["O_T_APC_Tracked_02_AA_ghex_F", "O_APC_Tracked_02_AA_F"], // Veh 2
-					["O_APC_Tracked_02_cannon_F", "O_T_APC_Tracked_02_cannon_ghex_F", "I_APC_tracked_03_cannon_F"] // Veh 3
+				[ // AAF convoy
+					["I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F"], // Veh 1
+					["I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F"], // Veh 2
+					["I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F"], // Veh 3
+					["I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F"] // Veh 4
 				]
 			]
 		]
@@ -149,8 +170,7 @@ _setupObjects =
 
     _skippedTowns = // get the list from -> \mapConfig\towns.sqf
     [
-        "Town_17",
-		"Town_14" // Pythos Island Marker Name
+        "Town_14" // Pythos Island Marker Name
     ];
 
     _town = ""; _missionPos = [0,0,0]; _radius = 0;
@@ -214,10 +234,11 @@ _setupObjects =
 
 	_missionPos = getPosATL leader _aiGroup;
 
-	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "picture");
- 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
+	_missionPicture = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "picture");
+ 	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
+ 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
-	_missionHintText = format ["A Military Patrol containing a <t color='%3'>%1</t> is patrolling the island. Destroy them and recover their cargo!", _vehicleName, mainMissionColor];
+	_missionHintText = format ["A Military Patrol containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -253,4 +274,4 @@ _successExec =
 	_successHintMessage = "The Patrol has been stopped! Ammo crates and a Mortar have fallen nearby.";
 };
 
-_this call MainMissionProcessor;
+_this call mainMissionProcessor;

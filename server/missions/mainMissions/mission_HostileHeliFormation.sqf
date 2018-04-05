@@ -21,17 +21,11 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_01_F", ["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"]],
- 		["B_Heli_Transport_01_camo_F", ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
- 		["B_Heli_Transport_01_F", ["I_Heli_light_03_dynamicLoadout_F", "HellMission"]]
+		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["B_Heli_Light_01_dynamicLoadout_F", "pawneeSkyhunter"]],
+ 		[["O_Heli_Attack_02_dynamicLoadout_F", "KajmanAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
+ 		[["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"], ["I_Heli_light_03_dynamicLoadout_F", "HellAT"]]
 	];
 
-	if (missionDifficultyHard) then
-	{
-		(_heliChoices select 0) set [0, ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"]];
- 		(_heliChoices select 1) set [0, ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"]];
- 		(_heliChoices select 2) set [0, ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"]];
-	};
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
 
@@ -161,19 +155,19 @@ _successExec =
 	// Mission completed
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
+	_box1 setDir (random 360);
 	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
 	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
+	_box2 setDir (random 360);
 	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
 	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box3 setDir random 360;
+	_box3 setDir (random 360);
 	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 	
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke = setDir random 360;
+	_smoke setDir (random 360);
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };

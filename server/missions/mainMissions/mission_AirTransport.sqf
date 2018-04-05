@@ -1,17 +1,17 @@
 // ******************************************************************************************
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
-//	@file Name: mission_SkySmuggler.sqf
+//	@file Name: mission_AirTransport.sqf
 //	@file Author: JoSchaap, AgentRev
 
 if (!isServer) exitwith {};
-#include "MoneyMissionDefines.sqf"
+#include "mainMissionDefines.sqf"
 
-private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2","_cash", "_smoke"];
+private ["_heliChoices", "_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_vehicleName2", "_numWaypoints", "_box1", "_box2", "_box3","_cash"];
 
 _setupVars =
 {
-	_missionType = "Sky Smuggler";
+	_missionType = "Dirty Air";
 	_locationsArray = nil; // locations are generated on the fly from towns
 };
 
@@ -21,12 +21,17 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_03_black_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
- 		["B_Heli_Transport_01_camo_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"]],
- 		["B_Heli_Transport_03_F", ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAA"]]
+		["B_Heli_Transport_01_F", "B_Heli_Attack_01_dynamicLoadout_F"],
+ 		["B_Heli_Transport_01_camo_F", "B_Heli_Attack_01_dynamicLoadout_F"],
+ 		["B_Heli_Transport_01_F", "B_Heli_Attack_01_dynamicLoadout_F"]
 	];
 
-	
+	if (missionDifficultyHard) then
+	{
+		(_heliChoices select 0) set [0, "B_Heli_Transport_01_F"];
+ 		(_heliChoices select 1) set [0, "B_Heli_Transport_01_camo_F"];
+ 		(_heliChoices select 2) set [0, "B_Heli_Transport_01_F"];
+	};
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
 
@@ -68,7 +73,7 @@ _setupObjects =
 
 		switch (true) do
 		{
-			case (_type isKindOf "Heli_Transport_01_base_F" || _type isKindOf "Heli_Transport_03_base_F"):
+			case (_type isKindOf "Heli_Transport_01_base_F"):
 			{
 				// these choppers have 2 turrets so we need 2 gunners
 				_soldier = [_aiGroup, _position] call createRandomSoldierC;
@@ -138,7 +143,7 @@ _setupObjects =
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
  	_vehicleName2 = getText (configFile >> "CfgVehicles" >> (_veh2 param [0,""]) >> "displayName");
 
-	_missionHintText = format ["A Money Smuggler is being escorted in a <t color='%3'>%1</t> by two Experimental <t color='%3'>%2</t> around the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, moneyMissionColor];
+	_missionHintText = format ["A formation of armed helicopters escorting a Money Smuggler are patrolling the island. Destroy them and recover their cargo!",  mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 	
@@ -157,30 +162,28 @@ _successExec =
 {
 	// Mission completed
 
-	
+	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
+	_box1 setDir random 360;
+	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
 
-	_box1 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir (random 360);
-	[_box1, "mission_USLaunchers"] call fn_refillbox;
+	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
+	_box2 setDir random 360;
+	[_box2, "mission_USLaunchers"] call fn_refillbox;
 
-	_box2 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box2 setDir (random 360);
-	[_box2, "mission_Main_A3snipers"] call fn_refillbox;
+	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
+	_box3 setDir random 360;
+	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
 	
 	for "_i" from 1 to 10 do
 	{
 		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
 		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
 		_cash setDir random 360;
-		_cash setVariable ["cmoney", 7500, true];
+		_cash setVariable ["cmoney", 20000, true];
 		_cash setVariable ["owner", "world", true];
 	};
-	
-	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke setDir (random 360);
-
 
 	_successHintMessage = "The sky is clear again, the Smuggler and Escort were taken out! Ammo crates and Money have fallen near the wreck.";
 };
 
-_this call moneyMissionProcessor;
+_this call mainMissionProcessor;
