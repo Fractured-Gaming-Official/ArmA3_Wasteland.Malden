@@ -11,17 +11,17 @@ MainMissions =
 	// Mission filename, weight
 	["mission_ArmedDiversquad", 1],
 	//["mission_Coastal_Convoy", .75],
-	["mission_Convoy", 1],
-	["mission_HostileHeliFormation", 0.75],
+	["mission_HostileHeliFormation", 0.5],
 	["mission_APC", 1],
-	["mission_MBT", 1],
+	["mission_MBT", .75],
 	//["mission_LightArmVeh", 1],
-	["mission_ArmedHeli", 1],
+	["mission_ArmedHeli", .75],
 	//["mission_CivHeli", 1],
 	["mission_Hackers",0.5],
 	["mission_HostileJetFormation", .5],
 	["mission_AbandonedJet", .5],
-	["mission_ArmedPatrol", .75]
+	["mission_ArmedPatrol", .75],
+	["mission_ArmedConvoy", .75]
 ];
 
 SideMissions =
@@ -38,7 +38,7 @@ SideMissions =
 	//["mission_WepCache", 2],
 	["mission_Sniper", 2],
 	["mission_Roadblock", 2]
-	
+
 ];
 
 MoneyMissions =
@@ -52,6 +52,7 @@ MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith
 ForestMissionMarkers = (allMapMarkers select {["ForestMission_", _x] call fn_startsWith}) apply {[_x, false]};
 SunkenMissionMarkers = (allMapMarkers select {["SunkenMission_", _x] call fn_startsWith}) apply {[_x, false]};
 RoadblockMissionMarkers = (allMapMarkers select {["RoadblockMission_", _x] call fn_startsWith}) apply {[_x, false]};
+IslandMissionMarkers = (allMapMarkers select {["IslandMission_", _x] call fn_startsWith}) apply {[_x, false]};
 
 
 

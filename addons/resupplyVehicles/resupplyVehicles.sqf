@@ -111,11 +111,6 @@ if !(_resupplyObjects isEqualTo []) then
 			_resupplyObjectPos = getPos _resupplyObject;
 			_resupplyObjectDir = getDir _resupplyObject;
 
-			_attachedObject = createVehicle ["Land_HBarrier_01_line_1_green_F", _resupplyObjectPos, [], _resupplyObjectDir, "NONE"];
-      _attachedObject setVariable ["R3F_LOG_disabled", true];
-      _attachedObject allowDamage false;
-      _attachedObject attachTo [_resupplyObject,[0,0,0]];
-
 			_resupplyObject setVariable ["R3F_LOG_disabled", true];
 			_resupplyObject setVariable ["A3W_lockpickDisabled", true];
 			_resupplyObject setVariable ["A3W_resupplyTruck", true];

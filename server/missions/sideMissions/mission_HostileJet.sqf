@@ -47,7 +47,7 @@ _setupObjects =
 		_vel = [velocity _vehicle, -(_direction)] call BIS_fnc_rotateVector2D; // Added to make it fly
 		_vehicle setDir _direction;
 		_vehicle setVelocity _vel; // Added to make it fly
-		
+
 		if (_variant != "") then
  		{
  			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
@@ -154,14 +154,14 @@ _successExec =
 
 		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
 		_box2 setDir (random 360);
-		[_box2, "mission_USLaunchers"] call randomCrateLoadOut;
-		
-		
+		[_box2, "mission_USLaunchers"] call fn_refillbox;
+
+
 	};
-	
+
 	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
 	_smoke setDir (random 360);
-	
+
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };
 

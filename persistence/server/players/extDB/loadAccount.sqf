@@ -33,9 +33,11 @@ _result = ([_query, 2] call extDB_Database_async) param [0,false];
 
 if (!_result) then
 {
-	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/,["GearLevel", _gears]];
-	
-
+	_data = 
+	[
+		["PlayerSaveValid", false], 
+		["GearLevel", _gears]
+	];
 	// prevent constraint fail on first save
 	private _sqlValues = [[["Name", name _player]], [0,1], false] call extDB_pairsToSQL;
 	[["insertOrUpdatePlayerInfo", _UID, _sqlValues select 0, _sqlValues select 1]] call extDB_Database_async;
@@ -139,6 +141,7 @@ else
 	};
 
 	_data append _dataTemp;
+	_data pushBack ["GearLevel", _gears];
 	//_data pushBack ["BankMoney", _bank];
 };
 
@@ -146,19 +149,19 @@ private _bank = 0;
 private _bounty = 0;
 private _bountyKills = [];
 
-
-_result = [["getPlayerStatusXMap", _UID, _environment], 2] call extDB_Database_async;
-
-
 if (_moneySaving) then
 {
+	_result = ["getPlayerBankMoney:" + _UID, 2] call extDB_Database_async;
+
 	_bank = _result param [0,0];
 };
 
 if (["A3W_atmBounties"] call isConfigOn) then
 {
-	_bounty = _result param [1,0];
-	_bountyKills = _result param [2,[]];
+	_result = ["getPlayerBounty:" + _UID, 2] call extDB_Database_async;
+
+	_bounty = _result param [0,0];
+	_bountyKills = _result param [1,[]];
 };
 
 _data append
