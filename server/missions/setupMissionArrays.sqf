@@ -32,10 +32,10 @@ SideMissions =
 	["mission_TownInvasion", 2],
 	["mission_Outpost", 2],
 	["mission_Truck", 1],
-	//["mission_AirWreck", 2],
+	["mission_AirWreck", 2],
 	["mission_geoCache", 0.5],
 	["mission_HostileJet", 0.75],
-	//["mission_WepCache", 2],
+	["mission_WepCache", 2],
 	["mission_Sniper", 2],
 	["mission_Roadblock", 2]
 
