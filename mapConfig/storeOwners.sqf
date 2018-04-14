@@ -17,10 +17,10 @@ storeOwnerConfig = compileFinal str
 	["GenStore5", -1, [], []],		//Chapoi
 	["GenStore6", -1, [], []],		//Power Plant
 	["GenStore7", -1, [], []],		//Military Isle
-	["GenStore8", -1, [], []],		//La Trinite
-	["GenStore9", -1, [], []],		//Arudy
+	//["GenStore8", -1, [], []],		//La Trinite
+	//["GenStore9", -1, [], []],		//Arudy
 
-	["GunStore1", -1, [], ["LMGS", "Rifles"]],		//Military Base
+	["GunStore1", -1, [], []],		//Military Base
 	["GunStore2", -1, [], []],		//La Pessagne
 	["GunStore3", -1, [], []],		//Saint Jean
 	["GunStore4", -1, [], []],		//La Riviere
@@ -29,20 +29,20 @@ storeOwnerConfig = compileFinal str
 	["GunStore7", -1, [], []],		//La Trinite
 	["GunStore8", -1, [], []],		//Le Port
 	["GunStore9", -1, [], []],		//Military Isle
-	["GunStore10", -1, [], []],		//Cimetiere Du RF
+	["GunStore10", -1, [], []],	//Cimetiere Du RF
 
 	// Buttons you can disable: "Land", "Armored", "Tanks", "Helicopters", "Boats", "Planes"
 	["VehStore1", -1, [], ["Boats"]],						//Airport
-	["VehStore2", -1, [], ["Land", "Armored", "Tanks"]],	//Aircraft Carrier
-	["VehStore3", -1, [], ["Boats", "Tanks"]],				//Pegasus Air Co.
-	["VehStore4", -1, [], ["Planes"]],						//Lolisse Harbour
+	["VehStore2", -1, [], ["Tanks", "Planes", "Helicopters"]],	//Lolisse
+	["VehStore3", -1, [], ["Armored", "Tanks", "Planes", "Helicopters"]],				//Pegasus Air Co.
+	["VehStore4", -1, [], ["Tanks", "Boats"]],						//Lolisse Harbour
 	["VehStore5", -1, [], ["Boats", "Planes"]],				//Larche
 	["VehStore6", -1, [], ["Planes", "Boats"]],				//Arette
-    ["VehStore7", -1, [], ["Boats", "Planes"]],				//Vigny
-	["VehStore8", -1, [], ["Planes"]],						//Faro
+  ["VehStore7", -1, [], ["Planes"]],				//Vigny
+	["VehStore8", -1, [], ["Tanks", "Armored", "Boats"]],						//Faro
 	["VehStore9", -1, [], ["Planes"]],					//Le Port Harbor
-	["VehStore10", -1, [], ["Planes", "Tanks"]]				//Military Isle
-	
+	["VehStore10", -1, [], ["Planes", "Tanks", "Boats"]]				//Military Isle
+
 ];
 
 // Outfits for store owners
@@ -55,8 +55,8 @@ storeOwnerConfigAppearance = compileFinal str
 	["GenStore5", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
 	["GenStore6", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
 	["GenStore7", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
-	["GenStore8", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
-	["GenStore9", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
+	//["GenStore8", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
+	//["GenStore9", [["weapon", ""], ["uniform", "U_IG_Guerilla3_1"]]],
 
 	["GunStore1", [["weapon", ""], ["uniform", "U_B_SpecopsUniform_sgg"]]],
 	["GunStore2", [["weapon", ""], ["uniform", "U_O_SpecopsUniform_blk"]]],
@@ -68,7 +68,7 @@ storeOwnerConfigAppearance = compileFinal str
 	["GunStore8", [["weapon", ""], ["uniform", "U_O_SpecopsUniform_blk"]]],
 	["GunStore9", [["weapon", ""], ["uniform", "U_I_CombatUniform_tshirt"]]],
 	["GunStore10", [["weapon", ""], ["uniform", "U_B_SpecopsUniform_sgg"]]],
-	
+
 
 	["VehStore1", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore2", [["weapon", ""], ["uniform", "U_Competitor"]]],
@@ -77,7 +77,7 @@ storeOwnerConfigAppearance = compileFinal str
 	["VehStore5", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore6", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore7", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore8", [["weapon", ""], ["uniform", "U_Competitor"]]],
+  ["VehStore8", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore9", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore10", [["weapon", ""], ["uniform", "U_Competitor"]]]
 ];

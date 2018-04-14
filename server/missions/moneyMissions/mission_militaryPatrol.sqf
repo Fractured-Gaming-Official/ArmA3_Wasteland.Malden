@@ -204,22 +204,22 @@ _successExec =
 
 	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
 	_box1 setVariable ["moveable", true, true];
-    [_box1,"Launchers_Tier_2"] call randomCrateLoadOut;
+    [_box1,"Launchers_Tier_2"] call fn_refillbox;
 	_box1 allowDamage false;
 
 	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
 	_box2 setVariable ["moveable", true, true];
-    [_box2,"mission_USSpecial2"] call randomCrateLoadOut;
+    [_box2,"mission_USSpecial2"] call fn_refillbox;
 	_box2 allowDamage false;
 
 	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
 	_box3 setVariable ["moveable", true, true];
-    [_box3,"mission_snipers"] call randomCrateLoadOut;
+    [_box3,"mission_snipers"] call fn_refillbox;
 	_box3 allowDamage false;
 
 	_box4 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
 	_box4 setVariable ["moveable", true, true];
-    [_box4,"mission_snipers"] call randomCrateLoadOut;
+    [_box4,"mission_snipers"] call fn_refillbox;
 	_box4 allowDamage false;
 
 	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";

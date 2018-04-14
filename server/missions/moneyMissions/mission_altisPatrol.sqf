@@ -21,7 +21,7 @@ _setupObjects =
 	_missionPos = markerPos (_town select 0);
 
 	_convoyVeh = ["I_MRAP_03_hmg_F","I_MBT_03_cannon_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_MRAP_03_gmg_F"];
-	
+
 	_veh1 = _convoyVeh select 0;
 	_veh2 = _convoyVeh select 1;
 	_veh3 = _convoyVeh select 2;
@@ -30,7 +30,7 @@ _setupObjects =
 
 	_createVehicle = {
 		private ["_type","_position","_direction","_vehicle","_soldier"];
-		
+
 		_type = _this select 0;
 		_position = _this select 1;
 		_direction = _this select 2;
@@ -41,11 +41,11 @@ _setupObjects =
 		_vehicle setDir _direction;
 		_aiGroup addVehicle _vehicle;
 
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCommander _vehicle;
-		_soldier = [_aiGroup, _position] call createRandomSoldier; 
+		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInGunner _vehicle;
 
 		//_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
@@ -57,7 +57,7 @@ _setupObjects =
 	};
 
 	_aiGroup = createGroup CIVILIAN;
-	
+
 	//_pos = getMarkerPos (_town select 0);
 	_rad = _town select 1;
 	_vehiclePosArray = [_missionPos,_rad,_rad + 50,5,0,0,0] call findSafePos;
@@ -81,7 +81,7 @@ _setupObjects =
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
 	_leader setRank "LIEUTENANT";
-	
+
 	_aiGroup setCombatMode "GREEN"; // units will defend themselves
 	_aiGroup setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
 	_aiGroup setFormation "FILE";
@@ -105,7 +105,7 @@ _setupObjects =
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh2 >> "displayName");
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh3 >> "displayName");
 	_vehicleName3 = getText (configFile >> "CfgVehicles" >> _veh4 >> "displayName");
-	
+
 	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling Stratis! Stop the patrol and capture the goods and money!", _vehicleName, _vehicleName2, _vehicleName3, moneyMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
@@ -118,7 +118,7 @@ _waitUntilCondition = {currentWaypoint _aiGroup >= _numWaypoints};
 _failedExec = nil;
 
 // _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
-_drop_item = 
+_drop_item =
 {
 	private["_item", "_pos"];
 	_item = _this select 0;
@@ -149,11 +149,11 @@ _successExec =
 		_cash setVariable["cmoney",5000,true];
 		_cash setVariable["owner","world",true];
 	};
-	
+
 	_drugpilerandomizer = [8,12,16];
 	_drugpile = _drugpilerandomizer call BIS_fnc_SelectRandom;
-	
-	for "_i" from 1 to _drugpile do 
+
+	for "_i" from 1 to _drugpile do
 	{
 	  private["_item"];
 	  _item = [
@@ -166,17 +166,17 @@ _successExec =
 	};
 
 	_box1 = "Box_East_Wps_F" createVehicle getMarkerPos _marker;
-    [_box1,"mission_USLaunchers"] call randomCrateLoadOut;
+    [_box1,"mission_USLaunchers"] call fn_refillbox;
 	_box1 allowDamage false;
-	
+
 	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
-    [_box2,"mission_USSpecial2"] call randomCrateLoadOut;
+    [_box2,"mission_USSpecial2"] call fn_refillbox;
 	_box2 allowDamage false;
-	
+
 	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-    [_box3,"mission_Main_A3snipers"] call randomCrateLoadOut;
+    [_box3,"mission_Main_A3snipers"] call fn_refillbox;
 	_box3 allowDamage false;
-	
+
 	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3];
 
 	_successHintMessage = "The patrol has been stopped, the money, drugs, crates and vehicles are yours to take.";
