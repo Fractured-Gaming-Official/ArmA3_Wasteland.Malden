@@ -302,88 +302,17 @@ player createDiaryRecord ["gearlevel",
 [
 "Gear Levels",
 "
-<br/> When you have enough $ for A gear level, Go and apply here http://fractured-gaming.com/application-forms.php?appid=4
+<br/> When you have enough $ for A gear level, Go and apply here http://forums.fractured-gaming.com
 <br/> When your application is recieved your gear level will be changed within 48 hours.
 <br/> Your Money will then be deducted from your account.
 <br/> To revieve a gear level, Fill out a gear level application on the forums to upgrade your gear level.
-<br/> There are 10 Levels in total.
-<br/> There are 5 Prestiege Levels. (after the 1st 10 levels)
-<br/> Prestiege Gear Levels allow you to spawn with either nothing or the bare minimum. 
-<br/> Prestiege Gear Levels are $10,000,000 per level and Prestiege level 5 is $25,000,000
-<br/> Prestiege Gear Levels are for the hardcore wasteland players with a big payoff at the end.
-<br/> The Final Prestiege level allows you to pick weapons from the VR before spawning. 
+<br/> There are 10 Levels in total. Each Level Cost's $5,000,000 (Bank Limit)
 "
 ]];
 
 player createDiaryRecord ["gearlevel",
 [
-"Prestiege Level 5",
-"
-<br/><font size='16'>Prestiege Level 5</font>
-<br/><font size='15'>Cost: $25,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Virtural Arsenal With almost every weapon in it.
 
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 4",
-"
-<br/><font size='16'>Prestiege Level 3</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-<br/> 45 ACP and 4 Magazines
-<br/> 2 Grenades
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 3",
-"
-<br/><font size='16'>Prestiege Level 3</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-<br/> 45 ACP and 2 Magazines
-<br/> 1 Grenade
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 2",
-"
-<br/><font size='16'>Prestiege Level 2</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-<br/> 45 ACP and 1 Magazine
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 1",
-"
-<br/><font size='16'>Prestiege Level 1</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-
-"
-]];
 
 player createDiaryRecord ["gearlevel",
 [
