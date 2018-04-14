@@ -33,8 +33,9 @@ _result = ([_query, 2] call extDB_Database_async) param [0,false];
 
 if (!_result) then
 {
-	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/,["GearLevel", _gears]];
-	
+	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/,
+	["GearLevel", _gears]];
+
 
 	// prevent constraint fail on first save
 	private _sqlValues = [[["Name", name _player]], [0,1], false] call extDB_pairsToSQL;
@@ -139,6 +140,7 @@ else
 	};
 
 	_data append _dataTemp;
+	_data pushBack ["GearLevel", _gears];
 	//_data pushBack ["BankMoney", _bank];
 };
 
