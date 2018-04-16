@@ -180,10 +180,7 @@ _allObjItems = [];
 	};
 } forEach _allObjItems;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/dev
 {
 	_x params ["_itemName", "_itemClass", "", "", "", "_sellValue"];
 	_itemQty = [_obj getVariable _itemClass] param [0,0,[0]];

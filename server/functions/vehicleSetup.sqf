@@ -78,15 +78,9 @@ switch (true) do
 		_centerOfMass set [2, (_centerOfMass select 2) - 0.1]; // cannot be static number like SUV due to different values for each variant
 		_vehicle setCenterOfMass _centerOfMass;
 	};
-<<<<<<< HEAD
-	case (_class isKindOf "Offroad_01_repair_base_F"):
-	{
-		_vehicle animate ["HideServices", 0];
-	};
-	case ({_class isKindOf _x} count ["B_Heli_Light_01_F", "B_Heli_Light_01_dynamicLoadout_F"] > 0):
-=======
+
 	case (_class isKindOf "Heli_Light_01_base_F"):
->>>>>>> upstream/dev
+
 	{
 		// Add flares to poor MH-9's
 		_vehicle removeWeaponTurret ["CMFlareLauncher", [-1]];
@@ -105,15 +99,15 @@ switch (true) do
 			_vehicle addMagazineTurret ["300Rnd_20mm_shells", [-1]];
 		};
 	};
-<<<<<<< HEAD
+
 	case ({_class isKindOf _x} count ["Heli_Attack_02_dynamicLoadout_base_F", "VTOL_02_infantry_dynamicLoadout_base_F", "VTOL_02_vehicle_dynamicLoadout_base_F"] > 0):
 	{
 		_vehicle removeWeaponTurret ["rockets_Skyfire",[0]];
 		_vehicle removeMagazinesTurret ["38Rnd_80mm_rockets",[0]];
-		
+
 		_vehicle addWeaponTurret ["rockets_Skyfire", [-1]];
 		_vehicle addMagazineTurret ["38Rnd_80mm_rockets", [-1]];
-=======
+
 	case ({_class isKindOf _x} count ["Wheeled_APC_F","Tank"] > 0):
 	{
 		// Give smoke launchers to armor drivers and gunners

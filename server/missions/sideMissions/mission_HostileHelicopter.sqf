@@ -21,11 +21,11 @@ _setupObjects =
 
 	_vehicleClass = if (missionDifficultyHard) then
 	{
-		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]] ;
+		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]] ;
 	}
 	else
 	{
-		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootMission"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionCAS"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]];
+		selectRandom [["B_Heli_Light_01_dynamicLoadout_F", "pawneeMission"], ["I_Heli_light_03_dynamicLoadout_F", "HellMission"], ["B_Heli_Attack_01_dynamicLoadout_F", "BlackfootAG"], ["O_Heli_Attack_02_dynamicLoadout_F", "KajmanMissionAG"], ["O_Heli_Light_02_dynamicLoadout_F", "orcaMission"]];
 	};
 
 	_createVehicle =

@@ -33,8 +33,7 @@ _result = ([_query, 2] call extDB_Database_async) param [0,false];
 
 if (!_result) then
 {
-	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/,
-	["GearLevel", _gears]];
+	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/,["GearLevel", _gears]];
 
 
 	// prevent constraint fail on first save

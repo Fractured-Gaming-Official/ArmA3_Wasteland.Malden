@@ -78,7 +78,7 @@ if !(_resupplyObjects isEqualTo []) then
 		if (hasInterface) then
 		{
 			_resupplyObjectTrigger = createTrigger ["EmptyDetector", (getPosASL _resupplyObject), false];
-			_resupplyObjectTrigger setTriggerArea [20,20,0,false,((getPosASL _resupplyObject select 2) + 15)];
+			_resupplyObjectTrigger setTriggerArea [15,15,0,false,((getPosASL _resupplyObject select 2) + 15)];
 			_resupplyObjectTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 			_resupplyObjectTrigger setTriggerStatements [
 				"

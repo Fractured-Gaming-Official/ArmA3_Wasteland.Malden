@@ -9,7 +9,7 @@
 
 #define HVT_AMOUNT 150000  // how much a player needs to be carrying to become a HVT
 #define HINT_DELAY 60  // number of seconds between each HVT reminder hint
-#define MARKER_REFRESH 30  // number of seconds between each HVT marker refresh
+#define MARKER_REFRESH 5  // number of seconds between each HVT marker refresh
 #define __PUNISH_HVT_LOGOUT__ // punish user if logged out as HVT?
 #define __PREVENT_HVT_LOGOUT__ // disables the abort and respawn button if player is marked as a HVT
 
@@ -66,7 +66,7 @@ while {true} do
 			createMarker [_markerName, getPosWorld player];
 			_markerName setMarkerColor "ColorRed";
 			_markerName setMarkerText format ["Sugar Daddy: %1 ($%2)", profileName, (player getVariable ["cmoney",0]) call fn_numToStr];
-			_markerName setMarkerSize [0.75, 0.75];
+			_markerName setMarkerSize [0.50, 0.50];
 			_markerName setMarkerShape "ICON";
 			_markerName setMarkerType "mil_warning";
 			_lastMarkerTime = diag_tickTime;

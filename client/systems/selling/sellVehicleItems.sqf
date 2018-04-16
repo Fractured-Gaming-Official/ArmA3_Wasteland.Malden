@@ -104,9 +104,7 @@ storeSellingHandle = _this spawn
 
 		{
 			_x params ["", "_item"];
-
 			_veh setVariable [_item, nil, true];
-
 		} forEach call customPlayerItems;
 
 		waitUntil {scriptDone _clearing};

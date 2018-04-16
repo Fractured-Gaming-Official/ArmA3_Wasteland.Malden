@@ -157,12 +157,10 @@ _turretMags3 = _veh call fn_getPylonsAmmo;
 
 // deprecated
 /*
-<<<<<<< HEAD
-_hasDoorGuns = isClass (configFile >> "CfgVehicles" >> _class >> "Turrets" >> "RightDoorGun");
-=======
+
 _hasDoorGuns = isClass (_vehCfg >> "Turrets" >> "RightDoorGun");
 
->>>>>>> upstream/dev
+
 _turrets = allTurrets [_veh, false];
 if !(_class isKindOf "B_Heli_Transport_03_unarmed_F") then
 {
