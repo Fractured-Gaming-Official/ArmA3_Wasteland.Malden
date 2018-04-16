@@ -72,9 +72,9 @@ if (isServer) then {
       private _varVals = [_vehData, _varNames] call fn_preprocessSavedData;
 
       private ["_veh", "_hoursAlive", "_hoursUnused"];
-      private (_varVals apply {_x select 0});
-
-      { (_x select 1) call compile format ["%1 = _this", _x select 0] } forEach _varVals;
+      //private (_varVals apply {_x select 0});
+      //{ (_x select 1) call compile format ["%1 = _this", _x select 0] } forEach _varVals;
+      [] params _varVals; // automagic assignation
 
       private _lockState = [1,2] select (["A3W_vehicleLocking"] call isConfigOn);
 
@@ -148,8 +148,11 @@ if (isServer) then {
       def(_display_name);
       _display_name = [typeOf _vehicle] call generic_display_name;
 
+      private _attachedObjs = attachedObjects _vehicle;
       if (!isNil "fn_untrackSavedVehicle") then { _vehicle call fn_untrackSavedVehicle };
       deleteVehicle _vehicle;
+
+      { ["detach", _x] call A3W_fnc_towingHelper } forEach _attachedObjs;
 
       _player setVariable ["parked_vehicles", _parked_vehicles]; //, true];
       ["parked_vehicles", _parked_vehicles] remoteExecCall ["A3W_fnc_setVarPlayer", _player];

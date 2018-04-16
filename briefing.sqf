@@ -64,6 +64,55 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
+"v1.4c",
+"
+<br/>[Added] Tanks DLC
+<br/>[Added] 3rd column in vehicle store for parts
+<br/>[Added] AA jet variants
+<br/>[Added] HE cannons to gun-only jets
+<br/>[Added] Smoke launchers to tank driver and gunner seats
+<br/>[Changed] All hidden vehicle paintjobs now available
+<br/>[Changed] Improved crate and supply truck loot
+<br/>[Changed] Some store prices
+<br/>[Fixed] Mortar resupply bugs
+<br/>[Fixed] Selling of laser designators
+<br/>[Fixed] More money exploits
+<br/>[Fixed] Other minor changes and fixes
+"
+]];
+
+player createDiaryRecord ["changelog",
+[
+"v1.4b",
+"
+<br/>[Added] Artillery Strike in random mission crates
+<br/>[Added] Player body marker
+<br/>[Added] Diving gear to purchased RHIB, Speedboat, SDV
+<br/>[Added] SDAR turret to SDV gunner
+<br/>[Added] Object loading capacity to SDV
+<br/>[Added] Tac-Ops DLC Police Van and Gorgon skins
+<br/>[Added] Apex DLC laser designator skins
+<br/>[Added] Saving of 'Autonomous' option for UAVs
+<br/>[Changed] Private storage space 4 times bigger
+<br/>[Changed] Allow towing of locked personal vehicles
+<br/>[Changed] Allow boat purchase on dry land
+<br/>[Changed] Disabled slingloading of locked vehicles
+<br/>[Changed] UAVs now sellable
+<br/>[Changed] Improved kill attribution
+<br/>[Fixed] Resupply error for static weapons
+<br/>[Fixed] Ejection of injured units
+<br/>[Fixed] Static designator ownership saving
+<br/>[Fixed] Saving of stashed uniform contents and weapon items
+<br/>[Fixed] Disappearing parked vehicles
+<br/>[Fixed] Annoying switch to rocket launcher on revive
+<br/>[Fixed] Drowned on dry land
+<br/>[Fixed] Camo nets not saving
+<br/>[Fixed] Many minor changes and fixes
+"
+]];
+
+player createDiaryRecord ["changelog",
+[
 "v1.4",
 "
 <br/>[Added] Laws of War DLC
