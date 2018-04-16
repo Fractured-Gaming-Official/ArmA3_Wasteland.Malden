@@ -137,9 +137,7 @@ reverse _cfgColors;
 		_colorlist lbSetPicture [_colorlistIndex, _tex];
 		_colorlist lbSetData [_colorlistIndex, str _texData];
 	};
-<<<<<<< HEAD
-} forEach _colorsArray;
-=======
+
 } forEach _colorsArray;
 };
 /****************************************************************************************************/
@@ -180,4 +178,3 @@ _parts sort true;
 	_partList lbSetPicture [_partListIndex, _animPicture];
 	_partList lbSetData [_partListIndex, _animData];
 } forEach _parts;
->>>>>>> upstream/dev

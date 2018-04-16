@@ -30,14 +30,14 @@ spawnActionHandle = (_this select 1) spawn
 	{
 		// Deal with money here
 		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
-<<<<<<< HEAD
-		player setVariable ["cmoney", _baseMoney, true];
-		
+
+	//player setVariable ["cmoney", _baseMoney, true];
+
 		[] execVM "addons\gear\gearCheck.sqf"; //Cael817, Add extra gear at respawn.
-=======
+
 		//player setVariable ["cmoney", _baseMoney, true];
 		[player, _baseMoney, true] call A3W_fnc_setCMoney;
->>>>>>> upstream/dev
+
 
 		if (["A3W_survivalSystem"] call isConfigOn) then
 		{

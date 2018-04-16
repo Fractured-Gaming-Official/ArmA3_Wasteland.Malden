@@ -39,10 +39,5 @@ if (["A3W_playerSaving"] call isConfigOn) then
 	[] spawn fn_savePlayerData;
 };
 
-<<<<<<< HEAD
-sleep 0.5;
-mutexScriptInProgress = false;
-=======
 sleep 0.75;
 mutexScriptInProgress = false;
->>>>>>> upstream/dev

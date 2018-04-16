@@ -36,13 +36,9 @@ _setupVars =
 					["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F", "B_T_LSV_01_armed_F"] // Veh 2
 				],
 				[ // AAF convoy
-<<<<<<< HEAD
-					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "O_T_LSV_02_armed_F"], // Veh 1
-					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "B_T_LSV_01_armed_F"] // Veh 2
-=======
 					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "I_LT_01_cannon_F"], // Veh 1
 					["I_MRAP_03_hmg_F", "I_MRAP_03_gmg_F", "I_LT_01_AT_F"] // Veh 2
->>>>>>> upstream/dev
+
 				]
 			]
 		],

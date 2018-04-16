@@ -48,13 +48,10 @@ switch (_type) do
 		_veh enableCopilot false;
 		_veh engineOn false;
 	};
-<<<<<<< HEAD
-};
-=======
+
 	case "enableDriving":
 	{
 		if (!isAgent teamMember driver _veh) then { _veh lockDriver false }; // isAgent == driverAssist active
 		_veh enableCopilot true;
 	};
 };
->>>>>>> upstream/dev

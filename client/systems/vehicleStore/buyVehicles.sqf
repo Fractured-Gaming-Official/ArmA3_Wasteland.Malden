@@ -73,7 +73,7 @@ storePurchaseHandle = _this spawn
 		hint format ["""%1"" has been spawned outside, in front of the store.", _itemText];
 		playSound "FD_Finish_F";
 	};
-	
+
 	_checkLastPurchase =
 	{
 		_canPurchase = true;
@@ -87,7 +87,7 @@ storePurchaseHandle = _this spawn
 		};
 		_canPurchase
 	};
-		
+
 	_checkLastRemotePurchase =
 	{
 		_canRemotePurchase = true;
@@ -110,26 +110,23 @@ storePurchaseHandle = _this spawn
 		{
 			[_vehicle, _colorData] call applyVehicleTexture;
 		};
-<<<<<<< HEAD
-		
-=======
 
 		if (count _animList > 0) then
 		{
 			[_vehicle, false, _animList, true] remoteExecCall ["BIS_fnc_initVehicle", _vehicle];
 		};
 
->>>>>>> upstream/dev
+
 		// If UAV or UGV, fill vehicle with UAV AI, give UAV terminal to our player, and connect it to the vehicle
 		if (unitIsUAV _vehicle) then
 		{
-<<<<<<< HEAD
+
 			vehicleStore_lastRemotePurchaseTime = diag_tickTime;
-			
+
 			switch (playerSide) do
-=======
+
 			private _uavTerminal = configName (configFile >> "CfgWeapons" >> (switch (playerSide) do // retrieve case-sensitive name
->>>>>>> upstream/dev
+
 			{
 				case BLUFOR: { "B_UavTerminal" };
 				case OPFOR:  { "O_UavTerminal" };
@@ -167,7 +164,7 @@ storePurchaseHandle = _this spawn
 		_vehicle
 	};
 
-	
+
 	if (_itemData isEqualType []) then
 	{
 		_class = _itemData param [1];
@@ -178,13 +175,13 @@ storePurchaseHandle = _this spawn
 		{
 			[_itemText] call _showInsufficientFundsError;
 		};
-		
+
 		///////////////////////////////////////////////////////////////////////////////////////////
 		_purchaseAllowed = true; // set the default to true
 		_isRemote = false; // set the default to false
 		if (round getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") > 0) then // check if is UAV/UGV/REMOTE vehicle BEFORE vehicle creation!
 		{
-<<<<<<< HEAD
+
 			_purchaseAllowed = call _checkLastRemotePurchase; // returns true or false
 			_isRemote = true;
 		}
@@ -192,9 +189,9 @@ storePurchaseHandle = _this spawn
 		{
 			_purchaseAllowed = call _checkLastPurchase; // returns true or false
 			_isRemote = false;
-=======
+
 			[_vehicle, _colorText, if (!isNil "_colorData") then { _colorData } else { "" }, _animList] call _applyVehProperties;
->>>>>>> upstream/dev
+
 		};
 		if (_purchaseAllowed) then
 		{
@@ -223,7 +220,7 @@ storePurchaseHandle = _this spawn
 				_price = -1;
 			};
 		};
-		///////////////////////////////////////////////////////////////////////////////////////////	
+		///////////////////////////////////////////////////////////////////////////////////////////
 	};
 	if (!isNil "_price" && {_price > -1}) then
 	{

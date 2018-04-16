@@ -18,16 +18,12 @@ _setupVars =
 		"B_MBT_01_cannon_F",
 		"O_MBT_02_cannon_F",
 		"I_MBT_03_cannon_F",
-<<<<<<< HEAD
-		"B_MBT_01_TUSK_F"
-	] call BIS_fnc_selectRandom;
-=======
 		["O_MBT_04_cannon_F", "O_MBT_04_command_F"] // Tanks DLC
 	];
 
 	while {_vehicleClass isEqualType []} do { _vehicleClass = selectRandom _vehicleClass };
 	if (_vehicleClass find "/" != -1) then { _vehicleClass = _vehicleClass splitString "/" };
->>>>>>> upstream/dev
+
 
 	_missionType = "Main Battle Tank";
 	_locationsArray = MissionSpawnMarkers;
