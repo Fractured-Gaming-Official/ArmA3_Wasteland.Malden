@@ -8,22 +8,22 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1785;
+		nextID=1822;
 	};
 	class MarkerIDProvider
 	{
-		nextID=162;
+		nextID=169;
 	};
 	class LayerIndexProvider
 	{
-		nextID=112;
+		nextID=118;
 	};
 	class Camera
 	{
-		pos[]={10094.47,56.33205,3960.5647};
-		dir[]={0.037428476,-0.6747967,0.73707092};
-		up[]={0.03422235,0.73799032,0.67393851};
-		aside[]={0.99872708,-3.5681023e-007,-0.050715186};
+		pos[]={5124.0161,883.4328,6611.0425};
+		dir[]={0.74718338,-0.35644668,-0.560992};
+		up[]={0.28506124,0.93429285,-0.21402863};
+		aside[]={-0.60043877,-1.3091631e-006,-0.79972011};
 	};
 };
 binarizationWanted=0;
@@ -40,7 +40,8 @@ addons[]=
 	"A3_Structures_F_EPA_Mil_Scrapyard",
 	"A3_Structures_F_Argo_Commercial_FuelStation_01",
 	"A3_Modules_F",
-	"A3_Structures_F_Ind_Shed"
+	"A3_Structures_F_Ind_Shed",
+	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
@@ -135,11 +136,7 @@ class Mission
 {
 	class Intel
 	{
-<<<<<<< HEAD
-		briefingName="A3Wasteland Stratis v1.3b";
-=======
-		briefingName="A3Wasteland Malden v1.4c"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
->>>>>>> upstream/dev
+		briefingName="A3Wasteland Malden-Fractured Gaming";
 		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
@@ -158,7 +155,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=399;
+		items=426;
 		class Item0
 		{
 			dataType="Group";
@@ -3609,7 +3606,7 @@ class Mission
 			name="VanillaLayer";
 			class Entities
 			{
-				items=40;
+				items=50;
 				class Item0
 				{
 					dataType="Object";
@@ -4291,12 +4288,12 @@ class Mission
 				class Item38
 				{
 					dataType="Marker";
-					position[]={10082.039,28.49585,3992.6306};
+					position[]={10082.109,28.49585,3990.5105};
 					name="Parking1";
 					type="Empty";
 					colorName="ColorBlack";
 					id=1783;
-					atlOffset=0.87008286;
+					atlOffset=0.9163208;
 				};
 				class Item39
 				{
@@ -4309,9 +4306,119 @@ class Mission
 					id=1784;
 					atlOffset=0.3101635;
 				};
+				class Item40
+				{
+					dataType="Marker";
+					position[]={5131.6841,86.413002,4692.2578};
+					name="Parking2";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=226.0426;
+					id=1788;
+					atlOffset=-0.83808899;
+				};
+				class Item41
+				{
+					dataType="Marker";
+					position[]={5157.9028,86.044998,4665.9072};
+					name="Parking2_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=228.39561;
+					id=1789;
+					atlOffset=1.4445419;
+				};
+				class Item42
+				{
+					dataType="Marker";
+					position[]={2252.2671,195.54201,3462.9919};
+					name="Parking3";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=226.04298;
+					id=1793;
+					atlOffset=10.586899;
+				};
+				class Item43
+				{
+					dataType="Marker";
+					position[]={2248.908,195.174,3424.626};
+					name="Parking3_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=228.39598;
+					id=1794;
+					atlOffset=9.4920044;
+				};
+				class Item44
+				{
+					dataType="Marker";
+					position[]={6677.8589,120.796,8840.9697};
+					name="Parking4";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=120.22599;
+					id=1800;
+					atlOffset=12.378593;
+				};
+				class Item45
+				{
+					dataType="Marker";
+					position[]={6680.585,120.428,8824.0469};
+					name="Parking4_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=122.57899;
+					id=1801;
+					atlOffset=11.686775;
+				};
+				class Item46
+				{
+					dataType="Marker";
+					position[]={4743.6709,166.478,9867.3574};
+					name="Parking5";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=122.72298;
+					id=1806;
+					atlOffset=11.835022;
+				};
+				class Item47
+				{
+					dataType="Marker";
+					position[]={4740.6572,166.11,9843.6641};
+					name="Parking5_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=317.89301;
+					id=1807;
+					atlOffset=11.575531;
+				};
+				class Item48
+				{
+					dataType="Marker";
+					position[]={7718.3594,173.864,6501.9526};
+					name="Parking6";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=327.75797;
+					id=1812;
+					atlOffset=151.3009;
+				};
+				class Item49
+				{
+					dataType="Marker";
+					position[]={7689.2866,173.31949,6474.4238};
+					name="Parking6_spawn";
+					type="Empty";
+					colorName="ColorBlack";
+					angle=330.11096;
+					id=1813;
+					atlOffset=150.10643;
+				};
 			};
 			id=588;
-			atlOffset=67.218781;
+			atlOffset=90.058731;
 		};
 		class Item64
 		{
@@ -8758,13 +8865,13 @@ class Mission
 		class Item299
 		{
 			dataType="Marker";
-			position[]={6287.4355,0,7502.9453};
+			position[]={7677.3911,0,6456.668};
 			name="RoadblockMission_8";
 			type="Empty";
 			colorName="ColorYellow";
 			angle=69.999992;
 			id=1634;
-			atlOffset=-164.86577;
+			atlOffset=-23.363945;
 		};
 		class Item300
 		{
@@ -12807,6 +12914,409 @@ class Mission
 			id=1780;
 			type="Land_i_Shed_Ind_F";
 			atlOffset=0.52000046;
+		};
+		class Item399
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10118.804,27.818842,3990.3213};
+				angles[]={6.278389,0,0.0055992967};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1785;
+			type="Land_HelipadCircle_F";
+		};
+		class Item400
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10082.063,27.587931,3990.886};
+				angles[]={6.26159,0,6.2767816};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1786;
+			type="Land_HelipadCircle_F";
+		};
+		class Item401
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5175.7021,87.227379,4688.8975};
+				angles[]={6.2559938,0.87482017,6.2743897};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionObject";
+			};
+			id=1787;
+			type="Land_i_Shed_Ind_F";
+			atlOffset=0.60557556;
+		};
+		class Item402
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5157.2271,84.642738,4665.5806};
+				angles[]={6.2471995,0.88538861,6.2033553};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1790;
+			type="Land_HelipadSquare_F";
+		};
+		class Item403
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5132.3662,87.198479,4691.9175};
+				angles[]={6.2280416,0.89175618,6.2336264};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1791;
+			type="Land_HelipadCircle_F";
+		};
+		class Item404
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2216.418,185.40735,3446.9346};
+				angles[]={0,4.7849503,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionObject";
+			};
+			id=1792;
+			type="Land_i_Shed_Ind_F";
+			atlOffset=0.58650208;
+		};
+		class Item405
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2252.9507,184.9929,3463.4644};
+				angles[]={0.018400107,4.7447977,0.067896426};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1795;
+			type="Land_HelipadCircle_F";
+		};
+		class Item406
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2248.708,185.70953,3423.614};
+				angles[]={0.042374056,4.7568731,0.076650143};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1796;
+			type="Land_HelipadCircle_F";
+		};
+		class Item407
+		{
+			dataType="Marker";
+			position[]={2232.9331,186.009,3447.8989};
+			name="marker_162";
+			text="Parking";
+			type="mil_box";
+			colorName="ColorCIV";
+			alpha=0.5;
+			id=1797;
+			atlOffset=1.8295593;
+		};
+		class Item408
+		{
+			dataType="Marker";
+			position[]={5154.5801,84.372398,4683.5278};
+			name="marker_163";
+			text="Parking";
+			type="mil_box";
+			colorName="ColorCIV";
+			alpha=0.5;
+			id=1798;
+			atlOffset=-1.3433228;
+		};
+		class Item409
+		{
+			dataType="Marker";
+			position[]={10098.939,27.83,4009.5513};
+			name="marker_164";
+			text="Parking";
+			type="mil_box";
+			colorName="ColorCIV";
+			alpha=0.5;
+			id=1799;
+		};
+		class Item410
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6694.147,110.97935,8796.7549};
+				angles[]={0,2.938097,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionObject";
+			};
+			id=1802;
+			type="Land_i_Shed_Ind_F";
+			atlOffset=0.52999115;
+		};
+		class Item411
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6677.2188,108.4162,8841.499};
+				angles[]={0.016798066,1.3797604,6.2711854};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1803;
+			type="Land_HelipadCircle_F";
+		};
+		class Item412
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6681.6133,108.74268,8824.1299};
+				angles[]={0.0023920804,1.3542677,0.0015822123};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1804;
+			type="Land_HelipadCircle_F";
+		};
+		class Item413
+		{
+			dataType="Marker";
+			position[]={6688.7173,111.26281,8812.3818};
+			name="marker_165";
+			text="Parking";
+			type="mil_box";
+			colorName="ColorCIV";
+			alpha=0.5;
+			angle=254.18311;
+			id=1805;
+			atlOffset=2.4971313;
+		};
+		class Item414
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4741.0811,156.34293,9883.3574};
+				angles[]={0,6.1551752,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionObject";
+			};
+			id=1808;
+			type="Land_i_Shed_Ind_F";
+			atlOffset=0.54296875;
+		};
+		class Item415
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4743.6841,154.6454,9867.207};
+				angles[]={0.012000273,3.0656605,0.047164604};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1809;
+			type="Land_HelipadCircle_F";
+		};
+		class Item416
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4739.6436,154.49644,9843.8555};
+				angles[]={6.26159,0.035711773,0.041574344};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1810;
+			type="Land_HelipadCircle_F";
+		};
+		class Item417
+		{
+			dataType="Marker";
+			position[]={4746.9277,156.94458,9875.8193};
+			name="marker_166";
+			text="Parking";
+			type="mil_box";
+			colorName="ColorCIV";
+			alpha=0.5;
+			id=1811;
+			atlOffset=2.6337585;
+		};
+		class Item418
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7689.4395,23.222029,6474.9238};
+				angles[]={6.2440062,2.6218543,6.2136974};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1815;
+			type="Land_HelipadCircle_F";
+		};
+		class Item419
+		{
+			dataType="Marker";
+			position[]={7709.0059,164.33055,6486.9063};
+			name="marker_167";
+			text="Parking";
+			type="mil_box";
+			colorName="ColorCIV";
+			alpha=0.5;
+			angle=101.7152;
+			id=1817;
+			atlOffset=141.92442;
+		};
+		class Item420
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7718.083,22.596415,6502.3281};
+				angles[]={6.2368178,2.6339297,6.2256484};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1816;
+			type="Land_HelipadCircle_F";
+		};
+		class Item421
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7720.48,23.134182,6472.6382};
+				angles[]={0,2.1929986,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				init="[this] call A3W_fnc_setupMissionObject";
+			};
+			id=1814;
+			type="Land_i_Shed_Ind_F";
+			atlOffset=0.5252533;
+		};
+		class Item422
+		{
+			dataType="Marker";
+			position[]={9254.1162,0,12046.358};
+			name="marker_168";
+			text="See Our Forums At: Forums.Fractured-Gaming.Com";
+			type="mil_triangle";
+			colorName="ColorRed";
+			alpha=0.5;
+			id=1818;
+			atlOffset=76.748932;
+		};
+		class Item423
+		{
+			dataType="Marker";
+			position[]={9251.6074,0,11789.958};
+			name="marker_169";
+			text="Gear Level Information Can Be Found On Map Info";
+			type="mil_triangle";
+			colorName="ColorRed";
+			alpha=0.5;
+			id=1819;
+			atlOffset=75.237915;
+		};
+		class Item424
+		{
+			dataType="Marker";
+			position[]={9251.6074,0,11915.537};
+			name="marker_170";
+			text="Join Us On Discord @  Discord.Frac.GG";
+			type="mil_triangle";
+			colorName="ColorRed";
+			alpha=0.5;
+			id=1820;
+			atlOffset=74.25985;
+		};
+		class Item425
+		{
+			dataType="Marker";
+			position[]={9249.2383,0,11650.161};
+			name="marker_171";
+			text="Follow Our Rules. Rules Can Be Found On Our Forums Or In Map Info";
+			type="mil_triangle";
+			colorName="ColorRed";
+			alpha=0.5;
+			id=1821;
+			atlOffset=72.264915;
 		};
 	};
 };
