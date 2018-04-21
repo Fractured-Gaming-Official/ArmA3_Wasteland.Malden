@@ -24,6 +24,10 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Update] Dialog and start messages
+<br/>[Update] Parking locations added
+<br/>[Update] Store config and pricing, removed 'OP' items and transferred to mission only
+<br/>[Update] Mission spawn locations
 <br/>[Optimized] Code and Calls
 <br/>[Update] Mission and Database to current
 <br/>[Added] New Vehicles to Disable Thermals
@@ -345,77 +349,8 @@ player createDiaryRecord ["gearlevel",
 "
 ]];
 
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 5",
-"
-<br/><font size='16'>Prestiege Level 5</font>
-<br/><font size='15'>Cost: $25,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Virtural Arsenal With almost every weapon in it.
 
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 4",
-"
-<br/><font size='16'>Prestiege Level 3</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-<br/> 45 ACP and 4 Magazines
-<br/> 2 Grenades
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 3",
-"
-<br/><font size='16'>Prestiege Level 3</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-<br/> 45 ACP and 2 Magazines
-<br/> 1 Grenade
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 2",
-"
-<br/><font size='16'>Prestiege Level 2</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-<br/> 45 ACP and 1 Magazine
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
-[
-"Prestiege Level 1",
-"
-<br/><font size='16'>Prestiege Level 1</font>
-<br/><font size='15'>Cost: $10,000,000 ~:</font>
-<br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> Bergen Backpack
-
-"
-]];
-
-player createDiaryRecord ["gearlevel",
+/*player createDiaryRecord ["gearlevel",
 [
 "Gear Level 10",
 "
@@ -625,7 +560,7 @@ player createDiaryRecord ["gearlevel",
 <br/> A holosight for the Sting
 <br/> You will also get extra mags for both your Sting and ACP .45
 "
-]];
+]];*/
 
 player createDiaryRecord ["admins",
 [
@@ -636,23 +571,22 @@ player createDiaryRecord ["admins",
 <br/> * Mokey
 <br/> * Ghostyy
 <br/> * OutlawII
-<br/> * Shine_Dwarf
+<br/> * Shine
 <br/> * StinkySneeze (Third Best Canadian/Third Best Sniper)
 <br/> * Donkey
 
 <br/><font color='#0066FF' size='18'>High Admins</font>
 <br/><font color='#00FFEF' size='12'>Teleport, Spectate, Slay Delete Hacked objects</font>
-<br/> * Harry
+<br/> * Praetorian
 <br/> * Zenkiton
-<br/> * Rabidtroop
+<br/> * Weber
+<br/> * Reaper
 
 
 <br/><font color='#002FFF' size='18'>Low Admins</font>
 <br/><font color='#00FFEF' size='12'>Spectate, Slay, Delete Hacked Objects</font>
-<br/> * Logan
-<br/> * Weber
+<br/> * Sage
 <br/> * Caveman
-<br/> * Reaper
 
 "
 ]];
