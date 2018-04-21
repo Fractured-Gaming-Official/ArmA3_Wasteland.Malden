@@ -1158,7 +1158,6 @@ boatsArray = compileFinal str
 [
 	["Water Scooter", "C_Scooter_Transport_01_F", 1000, "boat", "SKIPSAVE"],
 
-<<<<<<< HEAD
 	["Rescue Boat", "C_Rubberboat", 2000, "boat", "SKIPSAVE"],
 	["Rescue Boat (NATO)", "B_Lifeboat", 2000, "boat", "SKIPSAVE"],
 	["Rescue Boat (CSAT)", "O_Lifeboat", 2000, "boat", "SKIPSAVE"],
