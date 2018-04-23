@@ -53,6 +53,7 @@ MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith
 ForestMissionMarkers = (allMapMarkers select {["ForestMission_", _x] call fn_startsWith}) apply {[_x, false]};
 SunkenMissionMarkers = (allMapMarkers select {["SunkenMission_", _x] call fn_startsWith}) apply {[_x, false]};
 RoadblockMissionMarkers = (allMapMarkers select {["RoadblockMission_", _x] call fn_startsWith}) apply {[_x, false]};
+IslandMissionMarkers = (allMapMarkers select {["IslandMission_", _x] call fn_startsWith}) apply {[_x, false]};
 
 
 
