@@ -136,8 +136,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="A3Wasteland Malden-Fractured Gaming";
-		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
+		briefingName="Fractured Wasteland Malden";
+		overviewText="A3Wasteland Malden-Re-imagined by Fractured Gaming";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
 		startWeather=0;
