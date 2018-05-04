@@ -12,7 +12,7 @@ MainMissions =
 	["mission_ArmedDiversquad", 1],
 	//["mission_Coastal_Convoy", .75],
 	["mission_Convoy", 1],
-	["mission_HostileHeliFormation", 0.75],
+	["mission_HostileHeliFormation", 0.5],
 	["mission_APC", 1],
 	["mission_MBT", 1],
 	//["mission_LightArmVeh", 1],
@@ -21,22 +21,24 @@ MainMissions =
 	["mission_Hackers",0.5],
 	["mission_HostileJetFormation", .5],
 	["mission_AbandonedJet", .5],
-	["mission_ArmedPatrol", .75],
-	["mission_AbandonedVehicle", 1]
+	["mission_ArmedPatrol", 1],
+	//["mission_AbandonedVehicle", 0.75]
+	["mission_ArmedPatrol", .75]
+//["mission_AbandonedVehicle", 0.75]
 ];
 
 SideMissions =
 [
-	["mission_HostileHelicopter", 0.75],
+	["mission_HostileHelicopter", 0.5],
 	["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", .5],
 	["mission_TownInvasion", 2],
 	["mission_Outpost", 2],
 	["mission_Truck", 1],
-	["mission_AirWreck", 2],
+	//["mission_AirWreck", 2],
 	["mission_geoCache", 0.5],
-	["mission_HostileJet", 0.75],
-	["mission_WepCache", 2],
+	["mission_HostileJet", 0.5],
+	//["mission_WepCache", 2],
 	["mission_Sniper", 2],
 	["mission_Roadblock", 2]
 
@@ -45,6 +47,7 @@ SideMissions =
 MoneyMissions =
 [
 	["mission_MoneyShipment", 2],
+	["mission_miniMoneyShipment", 2],
 	["mission_SunkenTreasure", 1],
 	["mission_SkySmuggler", 0.25]
 ];
@@ -53,7 +56,6 @@ MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith
 ForestMissionMarkers = (allMapMarkers select {["ForestMission_", _x] call fn_startsWith}) apply {[_x, false]};
 SunkenMissionMarkers = (allMapMarkers select {["SunkenMission_", _x] call fn_startsWith}) apply {[_x, false]};
 RoadblockMissionMarkers = (allMapMarkers select {["RoadblockMission_", _x] call fn_startsWith}) apply {[_x, false]};
-IslandMissionMarkers = (allMapMarkers select {["IslandMission_", _x] call fn_startsWith}) apply {[_x, false]};
 
 
 

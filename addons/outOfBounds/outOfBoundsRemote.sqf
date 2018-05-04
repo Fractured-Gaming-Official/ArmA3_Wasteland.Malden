@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2018 soulkobk (soulkobk.blogspot.com)
 
 	This program is free software: you can redistribute it and/or modify
@@ -17,13 +17,13 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 	----------------------------------------------------------------------------------------------
-	
+
 	Name: outOfBoundsRemote.sqf
 	Version: 1.0
 	Author: soulkobk (soulkobk.blogspot.com)
 	Creation Date: 2:14 PM 20/02/2018
 	Modification Date: 2:14 PM 20/02/2018
-	
+
 	Description:
 	out of bounds checks for player connected to a remote vehicle (uav/ugv).
 
@@ -33,7 +33,7 @@
 
 	Change Log:
 	1.0 - original base script.
-	
+
 	----------------------------------------------------------------------------------------------
 */
 
@@ -46,7 +46,7 @@ _maxHeight = 1500; // max remote height
 
 if (isServer) then
 {
-	_mapSizeSquare = 12800;
+	_mapSizeSquare = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
 	_mapSizeEllipse = sqrt ((_mapSizeSquare * _mapSizeSquare) + (_mapSizeSquare * _mapSizeSquare));
 	_mapCenterPos = [(_mapSizeSquare / 2),(_mapSizeSquare / 2)];
 	_mkrInBounds = createMarker ["playableAreaRemote",_mapCenterPos];
@@ -126,4 +126,4 @@ if (hasInterface) then
 			///////////////////////////////////////////////////////////////////////////////////////
 		};
 	};
-};	
+};

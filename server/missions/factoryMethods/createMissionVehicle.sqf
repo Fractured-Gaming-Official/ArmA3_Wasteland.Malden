@@ -53,5 +53,4 @@ if (worldName == "Tanoa" && _class select [1,3] != "_T_") then
 		case "O_": { [_veh, ["GreenHex"]] call applyVehicleTexture };
 	};
 };
-
 _veh
