@@ -789,13 +789,13 @@ backpackArray = compileFinal str
 
 genItemArray = compileFinal str
 [
-		["Airstrike Designator", "Laserdesignator_02", 1000000, "binoc", "noDLC"],
+	["Airstrike Designator", "Laserdesignator_02", 500000, "binoc", "noDLC"],
 	["UAV Terminal (NATO)", "B_UavTerminal", 150, "gps"],
 	["UAV Terminal (CSAT)", "O_UavTerminal", 150, "gps"],
 	["UAV Terminal (AAF)", "I_UavTerminal", 150, "gps"],
-	["Quadcopter UAV (NATO)", "B_UAV_01_backpack_F", 7500, "backpack"],
-	["Quadcopter UAV (CSAT)", "O_UAV_01_backpack_F", 7500, "backpack"],
-	["Quadcopter UAV (AAF)", "I_UAV_01_backpack_F", 7500, "backpack"],
+	["Quadcopter UAV (NATO)", "B_UAV_01_backpack_F", 15000, "backpack"],
+	["Quadcopter UAV (CSAT)", "O_UAV_01_backpack_F", 15000, "backpack"],
+	["Quadcopter UAV (AAF)", "I_UAV_01_backpack_F", 15000, "backpack"],
 	["Hexacopter UAV (NATO)", "B_UAV_06_backpack_F", 5000, "backpack"],
 	["Hexacopter UAV (CSAT)", "O_UAV_06_backpack_F", 5000, "backpack"],
 	["Hexacopter UAV (AAF)", "I_UAV_06_backpack_F", 5000, "backpack"],

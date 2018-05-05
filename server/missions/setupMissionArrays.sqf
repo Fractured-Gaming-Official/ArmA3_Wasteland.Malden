@@ -38,7 +38,7 @@ SideMissions =
 	//["mission_AirWreck", 2],
 	["mission_geoCache", 0.5],
 	["mission_HostileJet", 0.5],
-	//["mission_WepCache", 2],
+	["mission_WepCache", 2],
 	["mission_Sniper", 2],
 	["mission_Roadblock", 2]
 
@@ -46,7 +46,7 @@ SideMissions =
 
 MoneyMissions =
 [
-	["mission_MoneyShipment", 2],
+	["mission_MoneyShipment", 1],
 	["mission_miniMoneyShipment", 2],
 	["mission_SunkenTreasure", 1],
 	["mission_SkySmuggler", 0.25]
@@ -56,7 +56,7 @@ MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith
 ForestMissionMarkers = (allMapMarkers select {["ForestMission_", _x] call fn_startsWith}) apply {[_x, false]};
 SunkenMissionMarkers = (allMapMarkers select {["SunkenMission_", _x] call fn_startsWith}) apply {[_x, false]};
 RoadblockMissionMarkers = (allMapMarkers select {["RoadblockMission_", _x] call fn_startsWith}) apply {[_x, false]};
-
+IslandMissionMarkers = (allMapMarkers select {["IslandMission_", _x] call fn_startsWith}) apply {[_x, false]};
 
 
 LandConvoyPaths = (call compile preprocessFileLineNumbers "mapConfig\convoys\landConvoysList.sqf") apply {[_x, false]};
