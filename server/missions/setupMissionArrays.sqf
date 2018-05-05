@@ -24,7 +24,7 @@ MainMissions =
 	["mission_ArmedPatrol", 1],
 	//["mission_AbandonedVehicle", 0.75]
 	["mission_ArmedPatrol", .75]
-//["mission_AbandonedVehicle", 0.75]
+	//["mission_AbandonedVehicle", 0.75]
 ];
 
 SideMissions =

@@ -24,25 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
-<br/>[Update] Dialog and start messages
-<br/>[Update] Parking locations added
-<br/>[Update] Store config and pricing, removed 'OP' items and transferred to mission only
-<br/>[Update] Mission spawn locations
-<br/>[Optimized] Code and Calls
-<br/>[Update] Mission and Database to current
-<br/>[Added] New Vehicles to Disable Thermals
-<br/>[Added] New Vehicles to ToxicGas Exemptions
-<br/>[Update]Anti-Hack :)
-<br/>[New] Mission - Abandoned Vehicle
-<br/>[Added] Server Messages
-<br/>[Added] Tanks DLC to stores
-<br/>[Fixed] Store Prices
-<br/>[Fixed] Disable Thermals
-<br/>][REDUCED] HVT Map Refresh Time to 5 seconds
-<br/>][REMOVED] Bounty System by Centrifugal
-<br/>[FIXED] Optimizations for Server
-<br/>[NEW VERSION] Server Updated and re-released as 2.0
-
+<br/>[Update] Anti-hack Updated.
 "
 ]];
 
@@ -336,7 +318,7 @@ player createDiaryRecord ["gearlevel",
 [
 "Gear Levels",
 "
-<br/> When you have enough $ for A gear level, Go and apply here http://fractured-gaming.com/application-forms.php?appid=4
+<br/> When you have enough $ for A gear level, Go and apply here https://fractured-gaming.com
 <br/> When your application is recieved your gear level will be changed within 48 hours.
 <br/> Your Money will then be deducted from your account.
 <br/> To revieve a gear level, Fill out a gear level application on the forums to upgrade your gear level.
@@ -349,8 +331,77 @@ player createDiaryRecord ["gearlevel",
 "
 ]];
 
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 5",
+"
+<br/><font size='16'>Prestiege Level 5</font>
+<br/><font size='15'>Cost: $25,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Virtural Arsenal With almost every weapon in it.
 
-/*player createDiaryRecord ["gearlevel",
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 4",
+"
+<br/><font size='16'>Prestiege Level 3</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+<br/> 45 ACP and 4 Magazines
+<br/> 2 Grenades
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 3",
+"
+<br/><font size='16'>Prestiege Level 3</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+<br/> 45 ACP and 2 Magazines
+<br/> 1 Grenade
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 2",
+"
+<br/><font size='16'>Prestiege Level 2</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+<br/> 45 ACP and 1 Magazine
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
+[
+"Prestiege Level 1",
+"
+<br/><font size='16'>Prestiege Level 1</font>
+<br/><font size='15'>Cost: $10,000,000 ~:</font>
+<br/><font size='15'>List of Perks you get at this level ~:</font>
+<br/> Extra Starting Money: $1000
+<br/> Bergen Backpack
+
+"
+]];
+
+player createDiaryRecord ["gearlevel",
 [
 "Gear Level 10",
 "
@@ -358,18 +409,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $10,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $1000
-<br/> An Olive Carryall
-<br/> A Plate Carrier GL Rig
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> 4 Grenades
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> An ECH Light Helmet
-<br/> A MK 14 with 5 Standard Mags a RCO and a suppressor instead of a MX Marksmen Rifle
-<br/> A 4-five .45 Pistol with an MRD Sight and suppressor instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the 4-five .45
+
 "
 ]];
 
@@ -380,19 +420,8 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='16'>Gear Level 9</font>
 <br/><font size='15'>Cost: $9,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
-<br/> An Olive Carryall
-<br/> A Plate Carrier GL Rig
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> An ECH Light Helmet
-<br/> An MX Marksmen rifle with 4 Mags an RCO and a suppressor instead of a MX Carbine
-<br/> A 4-five .45 Pistol with an MRD Sight and Suppressor instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the 4-five .45
+<br/> Extra Starting Money: $900
+
 "
 ]];
 
@@ -404,18 +433,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $8,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $800
-<br/> An Olive Carryall
-<br/> An Olive Tactical Vest
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> An ECH Light Helmet
-<br/> An MX Carbine with 2 Mags and a Hologsight instead of a TRG-20
-<br/> A 4-five .45 Pistol with an MRD Sight instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the 4-five .45
+
 "
 ]];
 
@@ -427,18 +445,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $7,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $700
-<br/> An Olive Carryall
-<br/> An Olive Tactical Vest
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> An ECH Light Helmet
-<br/> A TRG-20 with 2 Mags and a Hologsight and Suppressor instead of a Vermin
-<br/> A 4-five .45 Pistol with an MRD Sight instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the 4-five .45
+
 "
 ]];
 
@@ -450,18 +457,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $6,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $600
-<br/> An Olive Carryall
-<br/> An Olive Tactical Vest
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> An ECH Light Helmet
-<br/> A TRG-20 with 2 Mags and a Hologsight instead of a Vermin
-<br/> A 4-five .45 Pistol instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the 4-five .45
+
 "
 ]];
 
@@ -472,17 +468,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='16'>Gear Level 5</font>
 <br/><font size='15'>Cost: $5,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $500
-<br/> An Olive Carryall
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> A TRG-20 with 2 Mags and a Hologsight instead of a Vermin
-<br/> A 4-five .45 Pistol instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the 4-five .45
+
 "
 ]];
 
@@ -494,16 +480,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $4,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $400
-<br/> An Olive Carryall
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> A holosight and Suppressor on your Vermin
-<br/> A 4-five .45 Pistol instead of the ACP .45
-<br/> An RPG-42 Alamut with 1 Rocket
-<br/> You also get extra mags for the Vermin and 4-five .45
+
 "
 ]];
 
@@ -515,14 +492,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: 3,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $300
-<br/> An Olive Carryall
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> A holosight for your Vermin
-<br/> A 4-five .45 Pistol instead of the ACP .45
+
 "
 ]];
 
@@ -534,13 +504,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $2,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $200
-<br/> An Olive Carryall
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A pair of Red Goggles
-<br/> A Vermin .45 ACP + 3 Mags
+
 "
 ]];
 
@@ -552,15 +516,9 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='15'>Cost: $1,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
 <br/> Extra Starting Money: $100
-<br/> An Olive Carryall
-<br/> A GPS
-<br/> A pair of Binoculars
-<br/> An Extra Grenade
-<br/> A First Aid Kit
-<br/> A holosight for the Sting
-<br/> You will also get extra mags for both your Sting and ACP .45
+
 "
-]];*/
+]];
 
 player createDiaryRecord ["admins",
 [
@@ -571,22 +529,20 @@ player createDiaryRecord ["admins",
 <br/> * Mokey
 <br/> * Ghostyy
 <br/> * OutlawII
-<br/> * Shine
+<br/> * Shine_Dwarf
 <br/> * StinkySneeze (Third Best Canadian/Third Best Sniper)
 <br/> * Donkey
 
 <br/><font color='#0066FF' size='18'>High Admins</font>
 <br/><font color='#00FFEF' size='12'>Teleport, Spectate, Slay Delete Hacked objects</font>
-<br/> * Praetorian
-<br/> * Zenkiton
-<br/> * Weber
-<br/> * Reaper
+<br/> * Harry
 
 
 <br/><font color='#002FFF' size='18'>Low Admins</font>
 <br/><font color='#00FFEF' size='12'>Spectate, Slay, Delete Hacked Objects</font>
-<br/> * Sage
+<br/> * Logan
 <br/> * Caveman
+<br/> * Reaper
 
 "
 ]];
