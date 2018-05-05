@@ -420,7 +420,7 @@ player createDiaryRecord ["gearlevel",
 <br/><font size='16'>Gear Level 9</font>
 <br/><font size='15'>Cost: $9,000,000 ~:</font>
 <br/><font size='15'>List of Perks you get at this level ~:</font>
-<br/> Extra Starting Money: $1000
+<br/> Extra Starting Money: $900
 
 "
 ]];
