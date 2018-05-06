@@ -15,7 +15,7 @@ _player setVariable ["gmoney",1000];
 removeVest _player;
 removeBackpack _player;
 //removeGoggles _player;
-//removeHeadgear _player;
+removeHeadgear _player;
 
 _player addBackpack "B_Carryall_oli"; //BackPack
 //_player addUniform ""; //Uniform (must be supported by side)
@@ -54,9 +54,7 @@ switch (true) do
 	case (["_medic_", typeOf _player] call fn_findString != -1):
 	{
 		_player addItem "MediKit";
-		_player removeItem "H_HelmetB_camo";
-		_player addItem "H_HelmetLeaderO_ocamo";
-		
+
 		_player addMagazines ["30Rnd_65x39_caseless_mag", 2]; //Add primary weapon magazines first so one gets loaded
 		_player addMagazines ["3Rnd_Smoke_Grenade_shell", 2]; //Add primary weapon magazines first so one gets loaded
 		_player addMagazines ["3Rnd_HE_Grenade_shell", 2]; //Add primary weapon magazines first so one gets loaded
@@ -67,9 +65,9 @@ switch (true) do
 
 		_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
 		_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
-		
+
 		_player addMagazines ["SmokeShell", 4]; //Grenades
-		
+
 		_player selectWeapon "arifle_MX_GL_F"; //Select Active Weapon
 	};
 	//Engineer
@@ -79,7 +77,7 @@ switch (true) do
 		_Player addItem "MineDetector";
 		_player removeItem "Binocular";
 		_Player addItem "Laserdesignator";
-		
+
 		_player addMagazines ["30Rnd_65x39_caseless_mag", 3]; //Add primary weapon magazines first so one gets loaded
 		_player addWeapon "arifle_MXC_F"; //Primary Weapon
 		_player addPrimaryWeaponItem "optic_Hamr"; //Primary Weapon Attachments
@@ -88,11 +86,11 @@ switch (true) do
 
 		_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
 		_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
-		
+
 		_player addMagazines ["MiniGrenade", 2]; //Grenades
 		_player addMagazines ["SLAMDirectionalMine_Wire_Mag", 2]; //Grenades
 		_player addMagazines ["ATMine_Range_Mag", 1]; //Grenades
-		
+
 		_player selectWeapon "arifle_MXC_F"; //Select Active Weapon
 	};
 	//Sniper
@@ -101,7 +99,7 @@ switch (true) do
 		_player addWeapon "Rangefinder";
 		_player removeItem "Rangefinder";
 		_Player addItem "Laserdesignator";
-		
+
 		_player addMagazines ["20Rnd_762x51_Mag", 3]; //Add primary weapon magazines first so one gets loaded
 		_player addWeapon "srifle_EBR_F"; //Primary Weapon
 		_player addPrimaryWeaponItem "optic_DMS"; //Primary Weapon Attachments
@@ -110,7 +108,7 @@ switch (true) do
 
 		_player addMagazines ["RPG32_F", 1]; //Add secondary Weapon magazines first so one gets loaded
 		_player addWeapon "launch_RPG32_F"; //Secondary Weapon (Launcher slot)
-		
+
 		_player addMagazines ["APERSTripMine_Wire_Mag", 2]; //Grenades
 		_player addMagazines ["ClaymoreDirectionalMine_Remote_Mag", 2]; //Grenades
 
@@ -122,7 +120,7 @@ switch (true) do
 		_player addVest "V_RebreatherIA";
 		_player addGoggles "G_Diving";
 		_player removeItem "";
-		
+
 		_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 3];
 		_player addMagazines ["20Rnd_556x45_UW_mag", 4];		//Add primary weapon magazines first so one gets loaded
 		_player addWeapon "arifle_SDAR_F"; //Primary Weapon
@@ -132,7 +130,7 @@ switch (true) do
 
 		//_player addMagazines ["", 0]; //Add secondary Weapon magazines first so one gets loaded
 		//_player addWeapon ""; //Secondary Weapon (Launcher slot)
-		
+
 		_player addMagazines ["MiniGrenade", 4]; //Grenades
 
 		_player selectWeapon "arifle_SDAR_F"; //Select Active Weapon
