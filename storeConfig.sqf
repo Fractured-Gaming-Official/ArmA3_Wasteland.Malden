@@ -310,8 +310,8 @@ ammoArray = compileFinal str
 	["7.62mm 30Rnd Mag", "30Rnd_762x39_Mag_F", 600],
 	["7.62mm 30Rnd Tracer (Yellow) Mag", "30Rnd_762x39_Mag_Tracer_F", 600],
 	["7.62mm 30Rnd Tracer (Green) Mag", "30Rnd_762x39_Mag_Tracer_Green_F", 600],
-	//["7.62mm 150Rnd Box", "150Rnd_762x51_Box", 150],
-	//["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x51_Box_Tracer", 125],
+	["7.62mm 150Rnd Box", "150Rnd_762x51_Box", 1750],
+	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x51_Box_Tracer", 1750],
 
 
 	//[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 250],
