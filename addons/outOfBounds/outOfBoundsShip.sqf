@@ -46,7 +46,7 @@ _maxHeight = 1700; // max water vehicle height (same height as helicopter, as so
 
 if (isServer) then
 {
-	_mapSizeSquare = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
+	_mapSizeSquare = 12800;
 	_mapSizeEllipse = sqrt ((_mapSizeSquare * _mapSizeSquare) + (_mapSizeSquare * _mapSizeSquare));
 	_mapCenterPos = [(_mapSizeSquare / 2),(_mapSizeSquare / 2)];
 	_mkrInBounds = createMarker ["playableAreaShip",_mapCenterPos];

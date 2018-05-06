@@ -1,6 +1,6 @@
 /*
 	----------------------------------------------------------------------------------------------
-	
+
 	Copyright © 2016 soulkobk (soulkobk.blogspot.com)
 
 	This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@ _maxHeight = 2200; // 1500m height max default
 
 if (isServer) then
 {
-	_mapSizeSquare = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
+	_mapSizeSquare = 12800;
 	_mapSizeEllipse = sqrt ((_mapSizeSquare * _mapSizeSquare) + (_mapSizeSquare * _mapSizeSquare));
 	_mapCenterPos = [(_mapSizeSquare / 2),(_mapSizeSquare / 2)];
 

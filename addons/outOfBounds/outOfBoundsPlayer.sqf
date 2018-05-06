@@ -46,7 +46,7 @@ _maxHeight = 2500; // max player height
 
 if (isServer) then
 {
-	_mapSizeSquare = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");
+	_mapSizeSquare = 12800;
 	_mapSizeEllipse = sqrt ((_mapSizeSquare * _mapSizeSquare) + (_mapSizeSquare * _mapSizeSquare));
 	_mapCenterPos = [(_mapSizeSquare / 2),(_mapSizeSquare / 2)];
 	_mkrInBounds = createMarker ["playableAreaPlayer",_mapCenterPos];
