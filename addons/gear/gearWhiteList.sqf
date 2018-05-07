@@ -91,45 +91,45 @@ _availableRifleMagazines =
 _availableSnipers =
 [
 "srifle_DMR_01_F",
-"srifle_DMR_02_camo_F",
-"srifle_DMR_02_F",
-"srifle_DMR_02_sniper_F",
+//"srifle_DMR_02_camo_F",
+//"srifle_DMR_02_F",
+//"srifle_DMR_02_sniper_F",
 "srifle_DMR_03_F",
 "srifle_DMR_03_khaki_F",
 "srifle_DMR_03_tan_F",
 "srifle_DMR_03_woodland_F",
 "srifle_DMR_04_F",
 "srifle_DMR_04_Tan_F",
-"srifle_DMR_05_blk_F",
-"srifle_DMR_05_hex_F",
-"srifle_DMR_05_tan_f",
+//"srifle_DMR_05_blk_F",
+//"srifle_DMR_05_hex_F",
+//"srifle_DMR_05_tan_f",
 "srifle_DMR_06_camo_F",
 "srifle_DMR_06_camo_khs_F",
 "srifle_DMR_06_olive_F",
 "srifle_DMR_07_blk_F",
 "srifle_DMR_07_ghex_F",
 "srifle_DMR_07_hex_F",
-"srifle_EBR_F",
-"srifle_GM6_camo_F",
-"srifle_GM6_F",
-"srifle_GM6_ghex_F",
-"srifle_LRR_camo_F",
-"srifle_LRR_F",
-"srifle_LRR_tna_F"
+"srifle_EBR_F"
+//"srifle_GM6_camo_F",
+//"srifle_GM6_F",
+//"srifle_GM6_ghex_F",
+//"srifle_LRR_camo_F",
+//"srifle_LRR_F",
+//"srifle_LRR_tna_F"
 ];
 
 
 _availableSniperMagazines =
 [
 "10Rnd_762x54_Mag",
-"10Rnd_338_Mag",
+//"10Rnd_338_Mag",
 "20Rnd_762x51_Mag",
 "10Rnd_127x54_Mag",
-"10Rnd_93x64_DMR_05_Mag",
-"20Rnd_650x39_Cased_Mag_F",
-"5Rnd_127x108_Mag",
-"5Rnd_127x108_APDS_Mag",
-"7Rnd_408_Mag"
+//"10Rnd_93x64_DMR_05_Mag",
+"20Rnd_650x39_Cased_Mag_F"
+//"5Rnd_127x108_Mag",
+//"5Rnd_127x108_APDS_Mag",
+//"7Rnd_408_Mag"
 ];
 
 
@@ -146,12 +146,12 @@ _availableLmgs =
 "arifle_SPAR_02_snd_F",
 "LMG_03_F",
 "LMG_Mk200_F",
-"LMG_Zafir_F",
-"MMG_01_hex_F",
-"MMG_01_tan_F",
-"MMG_02_black_F",
-"MMG_02_camo_F",
-"MMG_02_sand_F"
+"LMG_Zafir_F"
+//"MMG_01_hex_F",
+//"MMG_01_tan_F",
+//"MMG_02_black_F",
+//"MMG_02_camo_F",
+//"MMG_02_sand_F"
 ];
 
 
@@ -171,8 +171,8 @@ _availableLmgMagazines =
 "200Rnd_65x39_cased_Box_Tracer",
 "150Rnd_762x54_Box",
 "150Rnd_762x54_Box_Tracer",
-"150Rnd_93x64_Mag",
-"130Rnd_338_Mag"
+//"150Rnd_93x64_Mag",
+//"130Rnd_338_Mag"
 ];
 
 
