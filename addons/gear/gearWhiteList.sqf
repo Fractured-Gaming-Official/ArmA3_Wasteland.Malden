@@ -170,7 +170,7 @@ _availableLmgMagazines =
 "200Rnd_65x39_cased_Box",
 "200Rnd_65x39_cased_Box_Tracer",
 "150Rnd_762x54_Box",
-"150Rnd_762x54_Box_Tracer",
+"150Rnd_762x54_Box_Tracer"
 //"150Rnd_93x64_Mag",
 //"130Rnd_338_Mag"
 ];
