@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[Added] Night Vision to Launchers
 <br/>[Update] Anti-hack Updated.
 "
 ]];
