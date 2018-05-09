@@ -572,7 +572,7 @@ player createDiaryRecord ["Rules",
 [
 "Arma Rules & Info",
 "
-<br/> * (Theses rules apply to the ARMA 3 Stratis Wasteland Server) Failure to follow these rules will result in a kick and or ban, with or without warning.
+<br/> * (Theses rules apply to the ARMA 3 Malden Wasteland Server) Failure to follow these rules will result in a kick and or ban, with or without warning.
 <br/>
 <br/> * Keep away from and stay off of Spawn Island located at Grid [037079] North of the map.
 <br/> * STAY OFF of Global VON (Voice Over Network or Voice) , this is activated buy hitting -Caps Lock- (default.) If you are on Global VON hit . (period) to change your channel.

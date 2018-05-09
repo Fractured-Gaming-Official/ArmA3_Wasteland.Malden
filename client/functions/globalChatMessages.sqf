@@ -35,7 +35,7 @@ _globalChatPrefix = "FRACbot";
 _globalChatMessagesSleep = 30*60; // 30 minutes sleep per full loop.
 
 _globalChatMessages = [
-    ["You are playing on Fractured's A3Wasteland Stratis server.",120],
+    ["You are playing on Fractured's A3Wasteland Malden server.",120],
     ["Discord -> discord.frac.gg",120],
     ["Website -> Fractured-Gaming.com",120],
     ["Server restarts are at 6am, 12pm, 6pm and 12am daily (CST).",120],

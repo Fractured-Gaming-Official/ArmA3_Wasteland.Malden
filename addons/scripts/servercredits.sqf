@@ -40,7 +40,7 @@ _onScreenTime = 8; 		//how long one role should stay on screen. Use value from 0
 sleep 60; //Wait in seconds before the credits start after player IS ingame
 
 _role1 = "Welcome to";
-_role1names = ["Fractured A3Wasteland Stratis"];
+_role1names = ["Fractured A3Wasteland Malden"];
 _role2 = "Rules:";
 _role2names = ["By playing on our server you agree to follow our rules. Rules can be found on the map options or on our website"];
 _role3 = "Server restarts every 6 hours";

@@ -15,7 +15,7 @@ _setupVars =
 _setupObjects =
 {
 	private ["_starts", "_startDirs", "_waypoints"];
-	
+
 	_vehChoice = selectRandom
 	[
 		"C_Offroad_01_F",
@@ -25,43 +25,43 @@ _setupObjects =
 		"C_Van_01_box_F",
 		"C_Van_01_fuel_F"
 	];
-	
+
 	_veh1 = _vehChoice;
-	
+
 	_createvehicle =
 	{
 		private ["_type", "_position", "_direction", "_vehicle", "_soldier"];
-		
+
 		_type = _this select 0;
 		_position = _this select 1;
 		_direction = _this select 2;
-		
+
 		_vehicle = createVehicle [_type, _position, [], 0, "none"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
-		
+
 		[_vehicle] call vehicleSetup;
-		
+
 		_vehicle setDir _direction;
 		_aiGroup addVehicle _vehicle;
 
 		// add a driver to the vehicle
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
-		
+
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
-		
+
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
 	};
-	
+
 	// SKIP TOWN AND PLAYER PROXIMITY CHECK
- 
+
 	_skippedTowns = // get the list from -> \mapConfig\towns.sqf
 	[
 		"Town_14"
 	];
-	
+
 	_town = ""; _missionPos = [0,0,0]; _radius = 0;
 	_townOK = false;
 	while {!_townOK} do
@@ -75,10 +75,10 @@ _setupObjects =
 			_townOK = true;
 		};
 		sleep 0.1; // sleep between loops.
-    };	
-		
-	_aiGroup = createGroup CIVILIAN;	
-		
+    };
+
+	_aiGroup = createGroup CIVILIAN;
+
 	//_town = selectRandom (call cityList);
 	//_missionPos = markerPos (_town select 0);
 	//_radius = (_town select 1);
@@ -88,8 +88,8 @@ _setupObjects =
 	// {
 		// _vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
 	_vehicles = [];
-	
-	_vehiclePosArray = nil;		
+
+	_vehiclePosArray = nil;
 	{
 		_vehiclePosArray = getPos ((_missionPos nearRoads _radius) select _forEachIndex);
 		if (isNil "_vehiclePosArray") then
@@ -128,7 +128,7 @@ _setupObjects =
  	_vehicleName = getText (configFile >> "CfgVehicles" >> (_veh1 param [0,""]) >> "displayName");
 
 
-	_missionHintText = format ["A Gun Runner has been spotted in a <t color='%3'>%1</t> transporting weapons around Stratis. Destroy them and recover their cargo!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["A Gun Runner has been spotted in a <t color='%3'>%1</t> transporting weapons around Malden. Destroy them and recover their cargo!", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 
@@ -152,9 +152,9 @@ _successExec =
 	_box1 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
 	_box1 setDir random 360;
 	[_box1, "mission_Main_A3snipers"] call fn_refillbox;
-	
+
 	_successHintMessage = "The Runners have been taken out and vehicle has been captured, well done.";
-	
+
 };
 
 _this call sideMissionProcessor;

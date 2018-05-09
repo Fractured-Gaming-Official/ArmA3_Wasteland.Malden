@@ -11,7 +11,7 @@ private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_createVehicle","
 
 _setupVars =
 {
-	_missionType = "Stratis Patrol";
+	_missionType = "Malden Patrol";
 	_locationsArray = nil;
 };
 
@@ -106,7 +106,7 @@ _setupObjects =
 	_vehicleName2 = getText (configFile >> "CfgVehicles" >> _veh3 >> "displayName");
 	_vehicleName3 = getText (configFile >> "CfgVehicles" >> _veh4 >> "displayName");
 
-	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling Stratis! Stop the patrol and capture the goods and money!", _vehicleName, _vehicleName2, _vehicleName3, moneyMissionColor];
+	_missionHintText = format ["A convoy containing at least a <t color='%4'>%1</t>, a <t color='%4'>%2</t> and a <t color='%4'>%3</t> is patrolling Malden! Stop the patrol and capture the goods and money!", _vehicleName, _vehicleName2, _vehicleName3, moneyMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
