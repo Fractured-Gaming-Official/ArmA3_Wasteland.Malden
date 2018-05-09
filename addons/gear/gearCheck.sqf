@@ -1,9 +1,22 @@
+/*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*///*//*//*/
+
 //@file Version: 1.1
-//@file Name: gearcheck.sqf
-//@file Author: Cael817, With help of AgentRev, based of something i found
+//@file Name: gearCheck.sqf
+//@file Author: Mokey
 //@file Modified: soulkobk 12:46 PM 19/04/2018
 
-/*/ ------------------------------------------------------------------------------------------- /*/
+/*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+/*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*/
+
+
 va_var_gearCheckInProgress = true;
 
 _gearsEnabled = ["A3W_gearsEnabled"] call isConfigOn;
@@ -32,4 +45,3 @@ switch (_gearLevel) do
 };
 
 va_var_gearCheckInProgress = nil;
-/*/ ------------------------------------------------------------------------------------------- /*/
