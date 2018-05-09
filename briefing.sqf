@@ -24,6 +24,7 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[FIXED] Launcher NVGs (The Darker it is, the better they work)
 <br/>--------5/9/2018--------
 <br/>[FIXED] Night Vision to Rocket Launchers
 <br/>[FIXED] Sniper/LMG ammunition added to Gen Store for mission only weapons
