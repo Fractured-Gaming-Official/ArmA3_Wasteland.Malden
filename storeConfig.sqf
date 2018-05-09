@@ -116,13 +116,6 @@ rifleArray = compileFinal str
 	["Cyrus Rifle", "srifle_DMR_05_blk_F", 1600, "HIDDEN"],
 	["Cyrus Rifle (Hex)", "srifle_DMR_05_hex_F", 1750, "HIDDEN"],
 	["Cyrus Rifle (Tan)", "srifle_DMR_05_tan_f", 1750, "HIDDEN"],
-	[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 1000, "item"],
-	[".338 NM 130Rnd Belt", "130Rnd_338_Mag", 2000, "item"],
-	["9.3mm 10Rnd Mag", "10Rnd_93x64_DMR_05_Mag", 1000, "item"],
-	["9.3mm 150Rnd Belt", "150Rnd_93x64_Mag", 3000, "item"],
-	[".408 7Rnd Cheetah Mag", "7Rnd_408_Mag", 1250, "item"],
-	["12.7mm 5Rnd Mag", "5Rnd_127x108_Mag", 750, "item"],
-	["12.7mm 5Rnd Armor-Piercing Mag", "5Rnd_127x108_APDS_Mag", 1250, "item"],
 
 	// Sniper Rifles
 
@@ -314,16 +307,16 @@ ammoArray = compileFinal str
 	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x51_Box_Tracer", 1750],
 
 
-	//[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 250],
-	//[".338 NM 130Rnd Belt", "130Rnd_338_Mag", 750],
+	[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 250, "HIDDEN"],
+	[".338 NM 130Rnd Belt", "130Rnd_338_Mag", 750, "HIDDEN"],
 
-	//["9.3mm 10Rnd Mag", "10Rnd_93x64_DMR_05_Mag", 300],
-	//["9.3mm 150Rnd Belt", "150Rnd_93x64_Mag", 1500],
+	["9.3mm 10Rnd Mag", "10Rnd_93x64_DMR_05_Mag", 300, "HIDDEN"],
+	["9.3mm 150Rnd Belt", "150Rnd_93x64_Mag", 1500, "HIDDEN"],
 
-	//[".408 7Rnd Cheetah Mag", "7Rnd_408_Mag", 700],
+	[".408 7Rnd Cheetah Mag", "7Rnd_408_Mag", 700, "HIDDEN"],
 
-	//["12.7mm 5Rnd Mag", "5Rnd_127x108_Mag", 500],
-	//["12.7mm 5Rnd Armor-Piercing Mag", "5Rnd_127x108_APDS_Mag", 700],
+	["12.7mm 5Rnd Mag", "5Rnd_127x108_Mag", 500, "HIDDEN"],
+	["12.7mm 5Rnd Armor-Piercing Mag", "5Rnd_127x108_APDS_Mag", 700, "HIDDEN"],
 
 	["12.7mm 10Rnd Subsonic Mag", "10Rnd_127x54_Mag", 1000],
 
@@ -810,6 +803,13 @@ genItemArray = compileFinal str
 	["Medikit", "Medikit", 3000, "item"],
 	["Toolkit", "ToolKit", 3000, "item"],
 	["Mine Detector", "MineDetector", 3000, "item"],
+	[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 1000, "item"],
+	[".338 NM 130Rnd Belt", "130Rnd_338_Mag", 2000, "item"],
+	["9.3mm 10Rnd Mag", "10Rnd_93x64_DMR_05_Mag", 1000, "item"],
+	["9.3mm 150Rnd Belt", "150Rnd_93x64_Mag", 3000, "item"],
+	[".408 7Rnd Cheetah Mag", "7Rnd_408_Mag", 1250, "item"],
+	["12.7mm 5Rnd Mag", "5Rnd_127x108_Mag", 750, "item"],
+	["12.7mm 5Rnd Armor-Piercing Mag", "5Rnd_127x108_APDS_Mag", 1250, "item"],
 	["Diving Goggles", "G_Diving", 1000, "gogg"],
 	["NV Goggles (Brown)", "NVGoggles", 100, "nvg"],
 	["NV Goggles (Black)", "NVGoggles_OPFOR", 1000, "nvg"],
