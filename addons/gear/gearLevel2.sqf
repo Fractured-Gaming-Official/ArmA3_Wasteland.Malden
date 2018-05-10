@@ -76,6 +76,5 @@ switch (true) do
 			_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 2];
 			_player addWeapon "arifle_SDAR_F";
 			_player selectWeapon "arifle_SDAR_F";
-
 		};
 	};

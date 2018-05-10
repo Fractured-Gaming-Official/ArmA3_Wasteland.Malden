@@ -18,6 +18,7 @@ GNU Affero General Public License for more details.
 /*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*/
 
 private ["_player"];
+
 _player = _this;
 
 _player setVariable ["gmoney",800];
@@ -40,7 +41,6 @@ _player addWeapon "hgun_ACPC2_F";
 
 switch (true) do
 	{
-
 		case (["_medic_", typeOf _player] call fn_findString != -1):
 		{
 			_player addItem "MediKit";
@@ -89,6 +89,5 @@ switch (true) do
 			_player addMagazines ["20Rnd_556x45_UW_mag", 4];
 			_player addWeapon "arifle_SDAR_F";
 			_player selectWeapon "arifle_SDAR_F";
-
 		};
 	};

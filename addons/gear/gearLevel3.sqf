@@ -76,9 +76,8 @@ switch (true) do
 		{
 			_player addVest "V_RebreatherIA";
 			_player addGoggles "G_Diving";
-			_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 2]; //Add primary weapon magazines first so one gets loaded
+			_player addMagazines ["30Rnd_556x45_Stanag_Tracer_Green", 2];
 			_player addWeapon "arifle_SDAR_F";
-			_player selectWeapon "arifle_SDAR_F"; //Select Active Weapon
-
+			_player selectWeapon "arifle_SDAR_F";
 		};
 	};

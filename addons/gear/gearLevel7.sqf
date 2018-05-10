@@ -86,6 +86,5 @@ switch (true) do
 			_player addMagazines ["20Rnd_556x45_UW_mag", 3];
 			_player addWeapon "arifle_SDAR_F";
 			_player selectWeapon "arifle_SDAR_F";
-
 		};
 	};
