@@ -1,10 +1,26 @@
-//@file Version: 1.2
-//@file Name: gearLevel1.sqf
-//@file Author: Cael817, based of something i found
+/*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*///*//*//*/
+
+//	@file Version: 2.0
+//	@file Name gearLevel16.sqf
+//	@file Author: Mokey
+//	@file Modified: Shinedwarf
+//	@file Created: 4/21/2018 09:48
+
+/*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+/*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*//*/
+
 private ["_player"];
+
 _player = _this;
 
-// _player setVariable ["cmoney", (_player getVariable "cmoney") + 25000, true];
 _player setVariable ["gmoney",25000];
 
 {_player removeWeapon _x} forEach weapons _player;
