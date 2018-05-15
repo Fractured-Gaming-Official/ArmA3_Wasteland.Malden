@@ -146,13 +146,40 @@ _failedExec =
 
 _successExec =
 {
-	// Mission completed
-	[_vehicle, 1] call A3W_fnc_setLockState; // Unlock
-
-	_box1 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
-	[_box1, "mission_Main_A3snipers"] call fn_refillbox;
-
+	_numCratesToSpawn = 2; // edit this value to how many crates are to be spawned!
+	_lastPos = _this;
+	_i = 0;
+	while {_i < _numCratesToSpawn} do
+	{
+		_lastPos spawn
+		{
+			_lastPos = _this;
+	     		_crate = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
+	     		_crate setDir random 360;
+	     		_crate allowDamage false;
+	     		waitUntil {!isNull _crate};
+	     		if ((_lastPos select 2) > 5) then
+			{
+		 		_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
+		 		_crateParachute allowDamage false;
+		 		_crate attachTo [_crateParachute, [0,0,0]];
+		 		_crate call randomCrateLoadOut;
+		 		waitUntil {getPosATL _crate select 2 < 5};
+		 		detach _crate;
+		 		deleteVehicle _crateParachute;
+			};
+	     		_smokeSignalTop = createVehicle  ["SmokeShellRed_infinite", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
+	     		_lightSignalTop = createVehicle  ["Chemlight_red", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
+	     		_smokeSignalTop attachTo [_crate, [0,0,0.5]];
+	     		_lightSignalTop attachTo [_crate, [0,0,0.25]];
+			_timer = time + 120;
+			waitUntil {sleep 1; time > _timer};
+			_crate allowDamage true;
+			deleteVehicle _smokeSignalTop;
+			deleteVehicle _lightSignalTop;
+	 	};
+	        _i = _i + 1;
+	};
 	_successHintMessage = "The Runners have been taken out and vehicle has been captured, well done.";
 
 };

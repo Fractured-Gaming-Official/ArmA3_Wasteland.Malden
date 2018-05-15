@@ -142,33 +142,40 @@ _failedExec = nil;
 
 _successExec =
 {
-	// Mission completed
-
-	// wait until heli is down to spawn crates
-	_vehicle spawn
+	_numCratesToSpawn = 2; // edit this value to how many crates are to be spawned!
+	_lastPos = _this;
+	_i = 0;
+	while {_i < _numCratesToSpawn} do
 	{
-		_veh = _this;
-
-		waitUntil
+		_lastPos spawn
 		{
-			sleep 0.1;
-			_pos = getPos _veh;
-			(isTouchingGround _veh || _pos select 2 < 5) && {vectorMagnitude velocity _veh < [1,5] select surfaceIsWater _pos}
-		};
-
-		_box1 = createVehicle ["Box_NATO_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
-		_box1 setDir (random 360);
-		[_box1, "mission_USSpecial"] call fn_refillbox;
-
-		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
-		_box2 setDir (random 360);
-		[_box2, "mission_USLaunchers"] call fn_refillbox;
-
-
+			_lastPos = _this;
+	     		_crate = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
+	     		_crate setDir random 360;
+	     		_crate allowDamage false;
+	     		waitUntil {!isNull _crate};
+	     		if ((_lastPos select 2) > 5) then
+			{
+		 		_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
+		 		_crateParachute allowDamage false;
+		 		_crate attachTo [_crateParachute, [0,0,0]];
+		 		_crate call randomCrateLoadOut;
+		 		waitUntil {getPosATL _crate select 2 < 5};
+		 		detach _crate;
+		 		deleteVehicle _crateParachute;
+			};
+	     		_smokeSignalTop = createVehicle  ["SmokeShellRed_infinite", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
+	     		_lightSignalTop = createVehicle  ["Chemlight_red", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
+	     		_smokeSignalTop attachTo [_crate, [0,0,0.5]];
+	     		_lightSignalTop attachTo [_crate, [0,0,0.25]];
+			_timer = time + 120;
+			waitUntil {sleep 1; time > _timer};
+			_crate allowDamage true;
+			deleteVehicle _smokeSignalTop;
+			deleteVehicle _lightSignalTop;
+	 	};
+	        _i = _i + 1;
 	};
-
-	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke setDir (random 360);
 
 	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 };

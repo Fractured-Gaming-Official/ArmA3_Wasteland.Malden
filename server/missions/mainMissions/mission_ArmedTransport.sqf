@@ -18,7 +18,7 @@ _setupVars =
 _setupObjects =
 {
 	private ["_starts", "_startDirs", "_waypoints"];
-	
+
 	_vehChoices =
 	[
 		["B_MBT_01_TUSK_F", "B_APC_Tracked_01_rcws_F"],
@@ -47,10 +47,10 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
-		
+
 		_vehicle = createVehicle [_type, _position, [], 0, "none"];
 		_vehicle setVariable ["R3F_LOG_disabled", true, true];
-		
+
  		if (_variant != "") then
  		{
  			_vehicle setVariable ["A3W_vehicleVariant", _variant, true];
@@ -64,13 +64,13 @@ _setupObjects =
 		// add a driver/pilot/captain to the vehicle
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInDriver _vehicle;
-		
+
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
-		
+
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInGunner _vehicle;
-		
+
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 
 		if (_vehicle emptyPositions "commander" > 0) then
@@ -85,14 +85,14 @@ _setupObjects =
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle
 	};
-	
+
 	// SKIP TOWN AND PLAYER PROXIMITY CHECK
- 
+
 	_skippedTowns = // get the list from -> \mapConfig\towns.sqf
 	[
 		"Town_14"
 	];
-	
+
 	_town = ""; _missionPos = [0,0,0]; _radius = 0;
 	_townOK = false;
 	while {!_townOK} do
@@ -107,7 +107,7 @@ _setupObjects =
 		};
 		sleep 0.1; // sleep between loops.
     };
-	
+
 	_aiGroup = createGroup CIVILIAN;
 	//_town = selectRandom (call cityList);
 	//_missionPos = markerPos (_town select 0);
@@ -118,7 +118,7 @@ _setupObjects =
 	// {
 		// _vehicles pushBack ([_x, _vehiclePosArray, 0, _aiGroup] call _createVehicle);
 	_vehicles = [];
-	
+
 	_vehiclePosArray = nil;
 	{
 		_vehiclePosArray = getPos ((_missionPos nearRoads _radius) select _forEachIndex);
@@ -161,7 +161,7 @@ _setupObjects =
 	_missionHintText = format ["A Military Patrol containing a <t color='%3'>%1</t> and two <t color='%3'>%2</t> are patrolling the island. Destroy them and recover their cargo!", _vehicleName, _vehicleName2, mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
-	
+
 };
 
 _waitUntilMarkerPos = {getPosATL _leader};
@@ -173,21 +173,42 @@ _failedExec = nil;
 // _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
 
 _successExec =
+_successExec =
 {
-	// Mission completed
-
-	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
-	[_box1, "mission_USSpecial"] call fn_refillbox;
-
-	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
-	[_box2, "mission_USLaunchers"] call fn_refillbox;
-
-	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box3 setDir random 360;
-	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
-	
+	_numCratesToSpawn = 2; // edit this value to how many crates are to be spawned!
+	_lastPos = _this;
+	_i = 0;
+	while {_i < _numCratesToSpawn} do
+	{
+		_lastPos spawn
+		{
+			_lastPos = _this;
+	     		_crate = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
+	     		_crate setDir random 360;
+	     		_crate allowDamage false;
+	     		waitUntil {!isNull _crate};
+	     		if ((_lastPos select 2) > 5) then
+			{
+		 		_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
+		 		_crateParachute allowDamage false;
+		 		_crate attachTo [_crateParachute, [0,0,0]];
+		 		_crate call randomCrateLoadOut;
+		 		waitUntil {getPosATL _crate select 2 < 5};
+		 		detach _crate;
+		 		deleteVehicle _crateParachute;
+			};
+	     		_smokeSignalTop = createVehicle  ["SmokeShellRed_infinite", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
+	     		_lightSignalTop = createVehicle  ["Chemlight_red", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
+	     		_smokeSignalTop attachTo [_crate, [0,0,0.5]];
+	     		_lightSignalTop attachTo [_crate, [0,0,0.25]];
+			_timer = time + 120;
+			waitUntil {sleep 1; time > _timer};
+			_crate allowDamage true;
+			deleteVehicle _smokeSignalTop;
+			deleteVehicle _lightSignalTop;
+	 	};
+	        _i = _i + 1;
+	};
 	_mortar = createVehicle ["I_Mortar_01_F", _lastPos, [], 5, "None"];
 	_mortar setVariable ["R3F_LOG_Disabled", false, true];
 	_mortar setDir random 360;
