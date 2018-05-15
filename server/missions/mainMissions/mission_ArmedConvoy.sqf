@@ -252,9 +252,6 @@ _successExec =
 	 	};
 	        _i = _i + 1;
 	};
-	_mortar = createVehicle ["I_Mortar_01_F", _lastPos, [], 5, "None"];
-	_mortar setVariable ["R3F_LOG_Disabled", false, true];
-	_mortar setDir random 360;
 
 	_successHintMessage = "The Convoy has been stopped! Ammo crates and a Mortar have fallen nearby.";
 };

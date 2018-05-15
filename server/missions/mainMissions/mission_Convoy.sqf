@@ -152,13 +152,13 @@ _successExec =
 	     		waitUntil {!isNull _crate};
 	     		if ((_lastPos select 2) > 5) then
 			{
-		 		_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
-		 		_crateParachute allowDamage false;
-		 		_crate attachTo [_crateParachute, [0,0,0]];
-		 		_crate call randomCrateLoadOut;
-		 		waitUntil {getPosATL _crate select 2 < 5};
-		 		detach _crate;
-		 		deleteVehicle _crateParachute;
+				_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
+				_crateParachute allowDamage false;
+				_crate attachTo [_crateParachute, [0,0,0]];
+				_crate call randomCrateLoadOut;
+				waitUntil {getPosATL _crate select 2 < 5};
+				detach _crate;
+				deleteVehicle _crateParachute;
 			};
 	     		_smokeSignalTop = createVehicle  ["SmokeShellRed_infinite", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
 	     		_lightSignalTop = createVehicle  ["Chemlight_red", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
