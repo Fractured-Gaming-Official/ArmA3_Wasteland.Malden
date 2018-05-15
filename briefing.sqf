@@ -24,6 +24,12 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>[ADDED]Ranmdomized Crates
+<br/>CHANGED Air Mission to drop Parachute Crates
+<br/>[ADDED] Smoke and Chem Sticks to crates
+<br/>[CHANGED] Mission Processor to allow Last Killed Vehicle/leader in group to spawn mission rewards
+<br/>[CHANGED] Hostile Jets Mission Rewards to 5 crates.
+<br/>[CHANGED ]Hostile Heli Mission Rewards to 3 crates.
 <br/>--------5/10/2018--------
 <br>/[CHANGED] Damaging Values to Gas Grenades
 <br/>[ADDED] Screen Red Effect to Toxic Gas Grenades
