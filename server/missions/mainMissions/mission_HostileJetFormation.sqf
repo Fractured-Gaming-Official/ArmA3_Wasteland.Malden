@@ -148,49 +148,25 @@ _setupObjects =
 _waitUntilMarkerPos = {getPosATL _leader};
 _waitUntilExec = nil;
 _waitUntilCondition = {currentWaypoint _aiGroup >= _numWaypoints};
-
 _failedExec = nil;
 
-// _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
+#include "..\missionSuccessHandler.sqf"
 
-_successExec =
-{
-	_numCratesToSpawn = 5; // edit this value to how many crates are to be spawned!
-	_lastPos = _this;
-	_i = 0;
-	while {_i < _numCratesToSpawn} do
-	{
-		_lastPos spawn
-		{
-			_lastPos = _this;
-	     		_crate = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	     		_crate setDir random 360;
-	     		_crate allowDamage false;
-	     		waitUntil {!isNull _crate};
-	     		if ((_lastPos select 2) > 5) then
-			{
-		 		_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
-		 		_crateParachute allowDamage false;
-		 		_crate attachTo [_crateParachute, [0,0,0]];
-		 		_crate call randomCrateLoadOut;
-		 		waitUntil {getPosATL _crate select 2 < 5};
-		 		detach _crate;
-		 		deleteVehicle _crateParachute;
-			};
-	     		_smokeSignalTop = createVehicle  ["SmokeShellRed_infinite", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
-	     		_lightSignalTop = createVehicle  ["Chemlight_red", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
-	     		_smokeSignalTop attachTo [_crate, [0,0,0.5]];
-	     		_lightSignalTop attachTo [_crate, [0,0,0.25]];
-			_timer = time + 120;
-			waitUntil {sleep 1; time > _timer};
-			_crate allowDamage true;
-			deleteVehicle _smokeSignalTop;
-			deleteVehicle _lightSignalTop;
-	 	};
-	        _i = _i + 1;
-	};
+_missionCratesSpawn = true;
+_missionCrateNumber = 4;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
-};
+_missionMoneySpawn = false;
+_missionMoneyTotal = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+
+_missionSuccessMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
 
 _this call mainMissionProcessor;

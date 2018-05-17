@@ -25,7 +25,7 @@ _setupVars =
 		// Easy
 		[
 			"Money Runners", // Marker text
-			30000, // Money
+			10000, 30000, 50000, // Money
 			[
 				[ // NATO convoy
 					["B_MRAP_01_hmg_F", "B_MRAP_01_gmg_F", "B_T_LSV_01_armed_F", "B_T_LSV_01_AT_F"], // Veh 1
@@ -44,7 +44,7 @@ _setupVars =
 		// Medium
 		[
 			"Money Runners+", // Marker text
-			60000, // Money
+			30000, 60000, 90000 // Money
 			[
 				[ // NATO convoy
 					["I_LT_01_cannon_F", "I_LT_01_AT_F", "I_LT_01_AA_F"], // Veh 1
@@ -61,8 +61,8 @@ _setupVars =
 	];
 
 	_missionType = _MoneyShipment select 0;
-	_moneyAmount = _MoneyShipment select 1;
-	_convoys = _MoneyShipment select 2;
+	_moneyAmount = floor (random [_moneyShipment select 1, _moneyShipment select 2,  _moneyShipment select 3]);
+	_convoys = _MoneyShipment select 4;
 	_vehChoices = selectRandom _convoys;
 
 	_moneyText = format ["$%1", [_moneyAmount] call fn_numbersText];
@@ -213,61 +213,26 @@ _setupObjects =
 _waitUntilMarkerPos = {getPosATL _leader};
 _waitUntilExec = nil;
 _waitUntilCondition = {currentWaypoint _aiGroup >= _numWaypoints};
-
 _failedExec = nil;
 
-// _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
+#include "..\missionSuccessHandler.sqf"
 
-_successExec =
-{
-	/*/ --------------------------------------------------------------------------------------- /*/
-	_numCratesToSpawn = 2; // edit this value to how many crates are to be spawned!
-	/*/ --------------------------------------------------------------------------------------- /*/
+_missionCratesSpawn = true;
+_missionCrateNumber = selectRandom [1,2,3];
+_missionCrateSmoke = false;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	/*/ --------------------------------------------------------------------------------------- /*/
-	_lastPos = _this;
-	_i = 0;
-	while {_i < _numCratesToSpawn} do
-	{
-		_lastPos spawn
-		{
-			_lastPos = _this;
-			_crate = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-			_crate setDir random 360;
-			_crate allowDamage false;
-			waitUntil {!isNull _crate};
-			_crateParachute = createVehicle ["O_Parachute_02_F", (getPosATL _crate), [], 0, "CAN_COLLIDE" ];
-			_crateParachute allowDamage false;
-			_crate attachTo [_crateParachute, [0,0,0]];
-			_crate call randomCrateLoadOut;
-			waitUntil {getPosATL _crate select 2 < 5};
-			detach _crate;
-			deleteVehicle _crateParachute;
-			_moneyAmt = 10;
-			_moneyPerAmt = 3500;
-			_j = 0;
-			while {_j < _moneyAmt} do
-			{
-				_cash = createVehicle ["Land_Money_F", _crate, [], 5, "None"];
-				_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
-		    		_cash setDir random 360;
-		   		_cash setVariable ["cmoney", _moneyPerAmt, true];
-		   		_cash setVariable ["owner", "world", true];
-		   		_j = _j + 1;
-			};
-			_smokeSignalTop = createVehicle  ["SmokeShellRed_infinite", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
-			_lightSignalTop = createVehicle  ["Chemlight_red", getPosATL _crate, [], 0, "CAN_COLLIDE" ];
-			_smokeSignalTop attachTo [_crate, [0,0,0.5]];
-			_lightSignalTop attachTo [_crate, [0,0,0.25]];
-			_timer = time + 240;
-	  		waitUntil {sleep 1; time > _timer};
-    			_crate allowDamage true;
-	  		deleteVehicle _smokeSignalTop;
-	  		deleteVehicle _lightSignalTop;
-		};
-		_i = _i + 1;
-	};
-	_successHintMessage = "The runners has been stopped, the money and vehicles are now yours to take.";
-};
+_missionMoneySpawn = true;
+_missionParseSetupVars = call _setupVars;
+_missionMoneyTotal = _moneyAmount;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+
+_missionSuccessMessage = "The runners have been stopped, the money and vehicles are now yours to take.";
 
 _this call moneyMissionProcessor;

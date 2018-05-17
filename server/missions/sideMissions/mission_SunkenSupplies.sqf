@@ -49,12 +49,23 @@ _failedExec =
 	{ deleteVehicle _x } forEach [_box1, _box2];
 };
 
-_successExec =
-{
-	// Mission completed
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
+#include "..\missionSuccessHandler.sqf"
 
-	_successHintMessage = "The sunken supplies have been collected, well done.";
-};
+_missionCratesSpawn = true;
+_missionCrateNumber = 2;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
+
+_missionMoneySpawn = false;
+_missionMoneyTotal = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+
+_missionSuccessMessage = "Divers are in over their head.<br/> Supplies are now yours!";
 
 _this call sideMissionProcessor;
