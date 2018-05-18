@@ -190,8 +190,8 @@ _setupObjects =
     _skippedTowns = // get the list from -> \mapConfig\towns.sqf
     [
         "Town_20",
-				"Town_21",
-				"Town_22"
+	"Town_21",
+	"Town_22"
     ];
 
     _town = ""; _missionPos = [0,0,0]; _radius = 0;

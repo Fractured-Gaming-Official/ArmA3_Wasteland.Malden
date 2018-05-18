@@ -138,7 +138,9 @@ _setupObjects =
 
     _skippedTowns = // get the list from -> \mapConfig\towns.sqf
     [
-        "Town_14" // Pythos Island Marker Name
+        "Town_20",
+        "Town_21",
+        "Town_22"
     ];
 
     _town = ""; _missionPos = [0,0,0]; _radius = 0;
@@ -155,7 +157,7 @@ _setupObjects =
         };
         sleep 0.1; // sleep between loops.
     };
-    
+
 	_aiGroup = createGroup CIVILIAN;
 	/*/ soulkobk ------------------------------------------------------------------------------ /*/
 	_vehicles = [];
