@@ -189,40 +189,23 @@ _failedExec = nil;
 
 // _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
 
-_successExec =
-{
-	// Mission completed
+#include "..\missionSuccessHandler.sqf"
 
-	for "_x" from 1 to 10 do
-	{
-		_cash = "Land_Money_F" createVehicle markerPos _marker;
-		_cash setPos ((markerPos _marker) vectorAdd ([[2 + random 2,0,0], random 360] call BIS_fnc_rotateVector2D));
-		_cash setDir random 360;
-		_cash setVariable["cmoney",15000,true];
-		_cash setVariable["owner","world",true];
-	};
+_missionCratesSpawn = true;
+_missionCrateAmount = 1;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_box1 = "B_supplyCrate_F" createVehicle getMarkerPos _marker;
-	_box1 setVariable ["moveable", true, true];
-    [_box1,"Launchers_Tier_2"] call fn_refillbox;
-	_box1 allowDamage false;
+_missionMoneySpawn = true;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
 
-	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
-	_box2 setVariable ["moveable", true, true];
-    [_box2,"mission_USSpecial2"] call fn_refillbox;
-	_box2 allowDamage false;
-
-	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-	_box3 setVariable ["moveable", true, true];
-    [_box3,"mission_snipers"] call fn_refillbox;
-	_box3 allowDamage false;
-
-	_box4 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-	_box4 setVariable ["moveable", true, true];
-    [_box4,"mission_snipers"] call fn_refillbox;
-	_box4 allowDamage false;
-
-	_successHintMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
-};
+_missionSuccessMessage = "The patrol has been stopped, the money, crates and vehicles are yours to take.";
 
 _this call moneyMissionProcessor;

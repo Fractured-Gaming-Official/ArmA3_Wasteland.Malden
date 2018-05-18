@@ -70,19 +70,25 @@ _drop_item =
 	_obj setVariable ["mf_item_id", _id, true];
 };
 
-_successExec =
-{
-	// Mission completed
-	_randomBox = ["mission_USLaunchers","mission_USSpecial","mission_Main_A3snipers"] call BIS_fnc_selectRandom;
-	_box1 = createVehicle ["Box_NATO_Wps_F", _missionPos, [], 5, "None"];
-	_box1 setDir random 360;
-	[_box1, _randomBox] call fn_refillbox;
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1];
-	{ deleteVehicle _x } forEach [_barGate, _bunker1, _bunker2];
-	{ _x setVariable ["allowDamage", true, true] } forEach [_obj1, _obj2];
+#include "..\missionSuccessHandler.sqf"
 
+_missionCratesSpawn = true;
+_missionCrateAmount = 2;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_successHintMessage = format ["The roadblock has been dismantled."];
-};
+_missionMoneySpawn = false;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+
+_missionSuccessMessage = "Roadblock has been cleared.<br/> The supplies are yours for the taking.";
+
+_this call sideMissionProcessor;
 
 _this call sideMissionProcessor;

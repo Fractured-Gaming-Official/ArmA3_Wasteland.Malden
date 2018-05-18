@@ -144,17 +144,23 @@ _failedExec =
 	deleteVehicle _vehicle;
 };
 
-_successExec =
-{
-	// Mission completed
-	[_vehicle, 1] call A3W_fnc_setLockState; // Unlock
+#include "..\missionSuccessHandler.sqf"
 
-	_box1 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
-	[_box1, "mission_Main_A3snipers"] call fn_refillbox;
+_missionCratesSpawn = true;
+_missionCrateAmount = 2;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_successHintMessage = "The Runners have been taken out and vehicle has been captured, well done.";
+_missionMoneySpawn = false;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
 
-};
+_missionSuccessMessage = "The Runners have been taken out and vehicle has been captured, well done.";
 
 _this call sideMissionProcessor;

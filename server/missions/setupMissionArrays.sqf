@@ -40,6 +40,7 @@ SideMissions =
 	["mission_HostileJet", 0.5],
 	["mission_WepCache", 2],
 	["mission_Sniper", 2],
+	["mission_redDawn", 1],
 	["mission_Roadblock", 2]
 
 ];

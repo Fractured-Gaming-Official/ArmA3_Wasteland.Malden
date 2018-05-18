@@ -53,13 +53,23 @@ _failedExec =
 	{ deleteVehicle _x } forEach [_box1, _box2, _wreck];
 };
 
-_successExec =
-{
-	// Mission completed
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2];
-	deleteVehicle _wreck;
+#include "..\missionSuccessHandler.sqf"
 
-	_successHintMessage = "The airwreck supplies have been collected, well done.";
-};
+_missionCratesSpawn = true;
+_missionCrateAmount = 2;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
+
+_missionMoneySpawn = false;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+
+_missionSuccessMessage = "The airwreck supplies have been collected, well done.";
 
 _this call sideMissionProcessor;

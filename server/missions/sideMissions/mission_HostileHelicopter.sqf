@@ -140,37 +140,23 @@ _failedExec = nil;
 
 // _vehicle is automatically deleted or unlocked in missionProcessor depending on the outcome
 
-_successExec =
-{
-	// Mission completed
+#include "..\missionSuccessHandler.sqf"
 
-	// wait until heli is down to spawn crates
-	_vehicle spawn
-	{
-		_veh = _this;
+_missionCratesSpawn = true;
+_missionCrateAmount = 2;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-		waitUntil
-		{
-			sleep 0.1;
-			_pos = getPos _veh;
-			(isTouchingGround _veh || _pos select 2 < 5) && {vectorMagnitude velocity _veh < [1,5] select surfaceIsWater _pos}
-		};
+_missionMoneySpawn = false;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
 
-		_box1 = createVehicle ["Box_NATO_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
-		_box1 setDir (random 360);
-		[_box1, "mission_USSpecial"] call fn_refillbox;
-
-		_box2 = createVehicle ["Box_East_Wps_F", (getPosATL _veh) vectorAdd ([[_veh call fn_vehSafeDistance, 0, 0], random 360] call BIS_fnc_rotateVector2D), [], 5, "None"];
-		_box2 setDir (random 360);
-		[_box2, "mission_USLaunchers"] call fn_refillbox;
-
-
-	};
-
-	_smoke = createVehicle ["Smokeshellgreen", _lastPos, [], 5, "None"];
-	_smoke setDir (random 360);
-
-	_successHintMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen near the wreck.";
-};
+_missionSuccessMessage = "The sky is clear again, the enemy patrol was taken out! Ammo crates have fallen out their chopper.";
 
 _this call sideMissionProcessor;

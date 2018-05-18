@@ -47,7 +47,7 @@ _setupObjects =
 		_position = _this select 1;
 		_direction = _this select 2;
 		_variant = _type param [1,"",[""]];
- 
+
  		if (_type isEqualType []) then
  		{
  			_type = _type select 0;
@@ -146,8 +146,8 @@ _setupObjects =
 	_missionHintText = format ["A formation of armed helicopters escorting a Money Smuggler are patrolling the island. Destroy them and recover their cargo!",  mainMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
-	
-	
+
+
 };
 
 _waitUntilMarkerPos = {getPosATL _leader};
@@ -158,32 +158,22 @@ _failedExec = nil;
 
 // _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
 
-_successExec =
-{
-	// Mission completed
+#include "..\missionSuccessHandler.sqf"
 
-	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
-	_box1 setDir random 360;
-	[_box1, "mission_USSpecial"] call randomCrateLoadOut;
+_missionCratesSpawn = true;
+_missionCrateAmount = 2;
+_missionCrateSmoke = true;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
-	_box2 setDir random 360;
-	[_box2, "mission_USLaunchers"] call fn_refillbox;
-
-	_box3 = createVehicle ["Box_IND_WpsSpecial_F", _lastPos, [], 5, "None"];
-	_box3 setDir random 360;
-	[_box3, "mission_Main_A3snipers"] call fn_refillbox;
-	
-	for "_i" from 1 to 10 do
-	{
-		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
-		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
-		_cash setDir random 360;
-		_cash setVariable ["cmoney", 20000, true];
-		_cash setVariable ["owner", "world", true];
-	};
-
-	_successHintMessage = "The sky is clear again, the Smuggler and Escort were taken out! Ammo crates and Money have fallen near the wreck.";
-};
+_missionMoneySpawn = false;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+_successHintMessage = "The transport has been stoppped! Crates have been dropped nearby!";
 
 _this call mainMissionProcessor;

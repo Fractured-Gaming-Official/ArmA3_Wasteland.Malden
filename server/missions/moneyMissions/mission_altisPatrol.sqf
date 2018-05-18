@@ -114,10 +114,8 @@ _setupObjects =
 _waitUntilMarkerPos = {getPosATL _leader};
 _waitUntilExec = nil;
 _waitUntilCondition = {currentWaypoint _aiGroup >= _numWaypoints};
-
 _failedExec = nil;
 
-// _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
 _drop_item =
 {
 	private["_item", "_pos"];
@@ -137,49 +135,23 @@ _drop_item =
 	_obj setVariable ["mf_item_id", _id, true];
 };
 
-_successExec =
-{
-	// Mission completed
+#include "..\missionSuccessHandler.sqf"
 
-	for "_x" from 1 to 5 do
-	{
-		_cash = "Land_Money_F" createVehicle markerPos _marker;
-		_cash setPos ((markerPos _marker) vectorAdd ([[2 + random 2,0,0], random 360] call BIS_fnc_rotateVector2D));
-		_cash setDir random 360;
-		_cash setVariable["cmoney",5000,true];
-		_cash setVariable["owner","world",true];
-	};
+_missionCratesSpawn = true;
+_missionCrateAmount = 3;
+_missionCrateSmoke = false;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_drugpilerandomizer = [8,12,16];
-	_drugpile = _drugpilerandomizer call BIS_fnc_SelectRandom;
+_missionMoneySpawn = true;
+_missionMoneyAmount = 100000;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
 
-	for "_i" from 1 to _drugpile do
-	{
-	  private["_item"];
-	  _item = [
-	          ["lsd", "Land_WaterPurificationTablets_F"],
-	          ["marijuana", "Land_VitaminBottle_F"],
-	          ["cocaine","Land_PowderedMilk_F"],
-	          ["heroin", "Land_PainKillers_F"]
-	        ] call BIS_fnc_selectRandom;
-	  [_item, _lastPos] call _drop_item;
-	};
-
-	_box1 = "Box_East_Wps_F" createVehicle getMarkerPos _marker;
-    [_box1,"mission_USLaunchers"] call fn_refillbox;
-	_box1 allowDamage false;
-
-	_box2 = "Box_NATO_Wps_F" createVehicle getMarkerPos _marker;
-    [_box2,"mission_USSpecial2"] call fn_refillbox;
-	_box2 allowDamage false;
-
-	_box3 = "Box_NATO_Support_F" createVehicle getMarkerPos _marker;
-    [_box3,"mission_Main_A3snipers"] call fn_refillbox;
-	_box3 allowDamage false;
-
-	{ _x setVariable ["R3F_LOG_disabled", false, true] } forEach [_box1, _box2, _box3];
-
-	_successHintMessage = "The patrol has been stopped, the money, drugs, crates and vehicles are yours to take.";
-};
+_missionSuccessMessage = "The patrol has been stopped, the money, drugs, crates and vehicles are yours to take.";
 
 _this call moneyMissionProcessor;

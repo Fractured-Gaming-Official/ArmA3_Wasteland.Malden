@@ -22,7 +22,7 @@ _setupVars =
 	// Choices per vehicle : Min = 1, Max = infinite
 	_MoneyShipment =
 	[
-		
+
 		// Medium
 		[
 			"Convoy 1", // Marker text
@@ -52,7 +52,7 @@ _setupVars =
 				]
 			]
 		]
-		
+
 	]
 	call BIS_fnc_selectRandom;
 
@@ -92,7 +92,7 @@ _setupObjects =
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
-		
+
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
 
@@ -172,20 +172,24 @@ _failedExec = nil;
 
 // _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
 
-_successExec =
-{
-	// Mission completed
+#include "..\missionSuccessHandler.sqf"
 
-	for "_i" from 1 to 10 do
-	{
-		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
-		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
-		_cash setDir random 360;
-		_cash setVariable ["cmoney", _moneyAmount / 10, true];
-		_cash setVariable ["owner", "world", true];
-	};
+_missionCratesSpawn = true;
+_missionCrateAmount = selectRandom [2,3,4];
+_missionCrateSmoke = false;
+_missionCrateSmokeDuration = 120;
+_missionCrateChemlight = true;
+_missionCrateChemlightDuration = 120;
 
-	_successHintMessage = "The convoy has been stopped, the money and vehicles are now yours to take.";
-};
+_missionMoneySpawn = true;
+_missionParseSetupVars = call _setupVars;
+_missionMoneyAmount = _moneyAmount;
+_missionMoneyBundles = 10;
+_missionMoneySmoke = true;
+_missionMoneySmokeDuration = 120;
+_missionMoneyChemlight = true;
+_missionMoneyChemlightDuration = 120;
+
+_missionSuccessMessage = "The convoy has been stopped, the money and vehicles are now yours to take.";
 
 _this call moneyMissionProcessor;
