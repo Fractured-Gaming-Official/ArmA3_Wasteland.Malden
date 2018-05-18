@@ -208,8 +208,6 @@ _setupObjects =
         };
         sleep 0.1; // sleep between loops.
     };
-
-	_aiGroup = createGroup CIVILIAN;
 	_aiGroup = createGroup CIVILIAN;
 	/*/ soulkobk ------------------------------------------------------------------------------ /*/
 	_vehicles = [];

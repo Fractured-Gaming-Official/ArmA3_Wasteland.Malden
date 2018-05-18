@@ -155,8 +155,7 @@ _setupObjects =
         };
         sleep 0.1; // sleep between loops.
     };
-
-	_aiGroup = createGroup CIVILIAN;
+    
 	_aiGroup = createGroup CIVILIAN;
 	/*/ soulkobk ------------------------------------------------------------------------------ /*/
 	_vehicles = [];
@@ -177,7 +176,7 @@ _setupObjects =
     		} forEach _vehClasses;
 	};
 	/*/ --------------------------------------------------------------------------------------- /*/
-	
+
 	_veh2 = _vehClasses select (1 min (count _vehClasses - 1));
 
 	_leader = effectiveCommander (_vehicles select 0);
