@@ -269,7 +269,7 @@ _failedExec = nil;
 #include "..\missionSuccessHandler.sqf"
 
 _missionCratesSpawn = true;
-_missionCrateNumber = selectRandom [1,2,3];
+_missionCrateAmount = selectRandom [1,2,3];
 _missionCrateSmoke = false;
 _missionCrateSmokeDuration = 120;
 _missionCrateChemlight = true;
@@ -277,7 +277,7 @@ _missionCrateChemlightDuration = 120;
 
 _missionMoneySpawn = true;
 _missionParseSetupVars = call _setupVars;
-_missionMoneyTotal = _moneyAmount;
+_missionMoneyAmount = _moneyAmount;
 _missionMoneyBundles = 10;
 _missionMoneySmoke = true;
 _missionMoneySmokeDuration = 120;

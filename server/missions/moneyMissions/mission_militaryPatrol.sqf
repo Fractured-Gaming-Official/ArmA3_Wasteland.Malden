@@ -192,14 +192,14 @@ _failedExec = nil;
 #include "..\missionSuccessHandler.sqf"
 
 _missionCratesSpawn = true;
-_missionCrateNumber = 1;
+_missionCrateAmount = 1;
 _missionCrateSmoke = true;
 _missionCrateSmokeDuration = 120;
 _missionCrateChemlight = true;
 _missionCrateChemlightDuration = 120;
 
 _missionMoneySpawn = true;
-_missionMoneyTotal = 100000;
+_missionMoneyAmount = 100000;
 _missionMoneyBundles = 10;
 _missionMoneySmoke = true;
 _missionMoneySmokeDuration = 120;
