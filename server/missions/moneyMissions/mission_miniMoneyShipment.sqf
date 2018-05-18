@@ -44,7 +44,7 @@ _setupVars =
 		// Medium
 		[
 			"Money Runners+", // Marker text
-			30000, 60000, 90000 // Money
+			30000, 60000, 90000, // Money
 			[
 				[ // NATO convoy
 					["I_LT_01_cannon_F", "I_LT_01_AT_F", "I_LT_01_AA_F"], // Veh 1
