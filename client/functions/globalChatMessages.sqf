@@ -72,7 +72,7 @@ if (((count _globalChatMessages) >= 1) && (hasInterface)) then
 		{
 			_currentMessage = _x select 0;
 			_currentSleep = _x select 1;
-			server globalChat format ["%1 -> %2",_globalChatPrefix,_currentMessage];
+			server globalChat format ["%1 :: %2",_globalChatPrefix,_currentMessage];
 			uiSleep _currentSleep;
 		} forEach _globalChatMessages;
 	};
