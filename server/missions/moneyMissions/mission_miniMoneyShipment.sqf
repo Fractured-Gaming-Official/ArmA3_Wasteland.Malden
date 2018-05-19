@@ -57,7 +57,7 @@ _setupVars =
 	];
 
 	_missionType = _MoneyShipment select 0;
-	_moneyAmount = floor (random [_moneyShipment select 1, _moneyShipment select 2,  _moneyShipment select 3]);
+	_moneyAmount = round (floor (random [_moneyShipment select 1, _moneyShipment select 2,  _moneyShipment select 3]));
 	_convoys = _MoneyShipment select 4;
 	_vehChoices = selectRandom _convoys;
 	_moneyText = format ["$%1", [_moneyAmount] call fn_numbersText];
