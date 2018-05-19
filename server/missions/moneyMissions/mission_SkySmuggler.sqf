@@ -3,6 +3,8 @@
 // ******************************************************************************************
 //	@file Name: mission_SkySmuggler.sqf
 //	@file Author: JoSchaap, AgentRev
+//	@file Modified: [FRAC] Mokey
+//	@file missionSuccessHandler Author: soulkobk
 
 if (!isServer) exitwith {};
 #include "MoneyMissionDefines.sqf"
@@ -150,8 +152,6 @@ _waitUntilExec = nil;
 _waitUntilCondition = {currentWaypoint _aiGroup >= _numWaypoints};
 
 _failedExec = nil;
-
-// _vehicles are automatically deleted or unlocked in missionProcessor depending on the outcome
 
 #include "..\missionSuccessHandler.sqf"
 
