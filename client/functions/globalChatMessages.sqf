@@ -39,7 +39,7 @@ _globalChatMessages = [
         ["Discord -> discord.frac.gg",120],
         ["Website -> Fractured-Gaming.com",120],
         ["Server restarts are at 1am, 7am, 1pm, and 7pm daily (CST).",10],
-        ["We also have a Stratis Server. Have no fear, all gear and money transfers!",120],
+        ["We also have a Stratis Server. Have no fear, all gear and money transfer!",120],
         ["Gearlevel Information -> Can be found in the map menu.",120],
         ["You can view your stats or anyone elses stats -> stats.frac.gg ",120],
         ["If you encounter a bug, please post it on the forums -> forums.fractured-gaming.com .",120],
