@@ -30,29 +30,30 @@
 	----------------------------------------------------------------------------------------------
 */
 
-_globalChatPrefix = "FRACbot";
+_globalChatPrefix = "FRAC";
 
 _globalChatMessagesSleep = 30*60; // 30 minutes sleep per full loop.
 
 _globalChatMessages = [
-    ["You are playing on Fractured's A3Wasteland Malden server.",120],
-    ["Discord -> discord.frac.gg",120],
-    ["Website -> Fractured-Gaming.com",120],
-    ["Server restarts are at 6am, 12pm, 6pm and 12am daily (CST).",120],
-    ["Gearlevel Information -> Can be found in the map menu.",120],
-    ["You can view your stats or anyone elses stats -> stats.frac.gg ",120],
-    ["If you encounter a bug, please post it on the forums -> forums.fractured-gaming.com .",120],
-    ["Servers cost money, and they aint cheap! Donate -> donate.frac.gg",120],
-    ["Want to be a FRAC Member? Apply on the forums!.",120],
-    ["Server Rules:",1],
-    ["NO Hacking, Cheating or Exploiting!",30],
-    ["NO Racism, Heterosexism, or Bashing Religion! This is to include the terminology.",30],
-    ["NO Advertising Any Other VOIP or Community/Clan/Guild!",30],
-    ["NO Abusing VOIP!",30],
-    ["English Only When Using VOIP or Side/Global Chat!",30],
-    ["If You Don't Like It Here, Then Leave! If Not, we will show you the door!",30],
-    ["Don't Be An Asshole!",30],
-    ["Admins Can/Will Ban At Their Own Discretion To Stop Toxicity On The Server",30]
+        ["You are playing on Fractured's A3Wasteland Malden server.",120],
+        ["Discord -> discord.frac.gg",120],
+        ["Website -> Fractured-Gaming.com",120],
+        ["Server restarts are at 1am, 7am, 1pm, and 7pm daily (CST).",10],
+        ["We also have a Stratis Server. Have no fear, all gear and money transfers!",120],
+        ["Gearlevel Information -> Can be found in the map menu.",120],
+        ["You can view your stats or anyone elses stats -> stats.frac.gg ",120],
+        ["If you encounter a bug, please post it on the forums -> forums.fractured-gaming.com .",120],
+        ["Servers cost money, and they aint cheap! Donate -> donate.frac.gg",120],
+        ["Want to be a FRAC Member? Apply on the forums!.",120],
+        ["Server Rules:",1],
+        ["NO Hacking, Cheating or Exploiting!",30],
+        ["NO Racism, Heterosexism, or Bashing Religion! This is to include the terminology.",30],
+        ["NO Advertising Any Other VOIP or Community/Clan/Guild!",30],
+        ["NO Abusing VOIP!",30],
+        ["English Only When Using VOIP or Side/Global Chat!",30],
+        ["If You Don't Like It Here, Then Leave! If Not, we will show you the door!",30],
+        ["Don't Be An Asshole!",30],
+        ["Admins Can/Will Ban At Their Own Discretion To Stop Toxicity On The Server",30]
 ];
 
 /*	------------------------------------------------------------------------------------------
