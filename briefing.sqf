@@ -24,6 +24,10 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>--------5/18/2018-------
+<br/>[FIX] Randomization in crates. All crates should be random now.
+<br/>[UPDATE] Stratis and Malden are now Mirrored
+<br/>[FIXED] Various Missions
 <br/>--------5/16/2018-------
 <br/>[ADDED] New Mission: RED DAWN
 <br/>[ADDED] New Mission: Smuggler Missions: Small, Medium, Large, Heavy
