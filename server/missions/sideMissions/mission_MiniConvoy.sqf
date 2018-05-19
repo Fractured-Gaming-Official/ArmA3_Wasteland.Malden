@@ -145,6 +145,6 @@ _missionMoneyChemlight = true;
 _missionMoneyChemlightDuration = 120;
 
 _missionSuccessMessage = "The convoy has been stopped, the weapon crates and vehicles are now yours to take.";
-};
+
 
 _this call sideMissionProcessor;
