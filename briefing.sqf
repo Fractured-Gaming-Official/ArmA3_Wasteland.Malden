@@ -24,6 +24,8 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>--------5/19/2018-------
+<br/>[FIX] Remaining Value in Smuggler Missions
 <br/>--------5/18/2018-------
 <br/>[FIX] Randomization in crates. All crates should be random now.
 <br/>[UPDATE] Stratis and Malden are now Mirrored
