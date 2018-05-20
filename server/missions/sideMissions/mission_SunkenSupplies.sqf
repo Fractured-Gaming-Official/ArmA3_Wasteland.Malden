@@ -19,20 +19,6 @@ _setupObjects =
 {
 	_missionPos = markerPos _missionLocation;
 
-	_box1 = createVehicle ["Box_NATO_Wps_F", _missionPos, [], 5, "None"];
-	[_box1, "mission_USSpecial"] call fn_refillbox;
-
-	_box2 = createVehicle ["Box_East_Wps_F", _missionPos, [], 5, "None"];
-	[_box2, "mission_USLaunchers"] call fn_refillbox;
-
-	{
-		_boxPos = getPosASL _x;
-		_boxPos set [2, getTerrainHeightASL _boxPos + 1];
-		_x setPos _boxPos;
-		_x setDir random 360;
-		_x setVariable ["R3F_LOG_disabled", true, true];
-	} forEach [_box1, _box2];
-
 	_aiGroup = createGroup CIVILIAN;
 	[_aiGroup, _missionPos] call createSmallDivers;
 
