@@ -113,14 +113,11 @@ _setupVars =
 	];
 
 	_missionType = _moneyShipment select 0;
-
-	_moneyAmount = _moneyShipment select 2;
+	_moneyAmount = round (floor (random [_moneyShipment select 1, _moneyShipment select 2,  _moneyShipment select 3]));
 	_moneyText = "$" + (_moneyAmount call fn_numbersText);
-
 	_missionMoneyAmount = _moneyAmount; // for the successExec handler (missionSuccessHandler).
-
 	_vehClasses = [];
-	_vehChoices = selectRandom (_moneyShipment select 3);
+	_vehChoices = selectRandom (_moneyShipment select 4);
 	{ _vehClasses pushBack selectRandom _x } forEach _vehChoices;
 };
 
