@@ -90,5 +90,3 @@ _missionMoneyChemlightDuration = 120;
 _missionSuccessMessage = "Roadblock has been cleared.<br/> The supplies are yours for the taking.";
 
 _this call sideMissionProcessor;
-
-_this call sideMissionProcessor;
