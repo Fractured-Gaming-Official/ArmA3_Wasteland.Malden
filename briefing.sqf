@@ -24,6 +24,9 @@ player createDiaryRecord ["changelog",
 [
 "FRACTURED Logs",
 "
+<br/>--------5/26/2018-------
+<br/>[ADDED] Vector control of objects
+<br/>[CHANGED] R3F Logistics for future optimizations
 <br/>--------5/24/2018-------
 <br/>[CHANGE] Increased minimal amount of items in randomized crates
 <br/>[CHANGE] Increased rarity of thermal scopes in crates
