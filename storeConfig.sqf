@@ -1093,14 +1093,16 @@ planesArray = compileFinal str
 	["A-149 Gryphon (Mission)", "I_Plane_Fighter_04_F", 900000, "vehicle", "variant_GryphonM", "HIDDEN"],
 
 	["F/A-181 Black Wasp AA", "B_Plane_Fighter_01_F", 200000, "vehicle", "variant_blackwaspAA"],
+	["F/A-181 Black Wasp CAS", "B_Plane_Fighter_01_F", 300000, "vehicle", "variant_blackwaspCAS"],
 	["F/A-181 Black Wasp (Air Support)", "B_Plane_Fighter_01_Stealth_F", 1100000, "vehicle", "HIDDEN"], // no missiles or bombs
 	["F/A-181 Black Wasp (Ground Support)", "B_Plane_Fighter_01_F", 1000000, "vehicle", "HIDDEN"],
 
 	["To-201 Shikra AA", "O_Plane_Fighter_02_F", 200000, "vehicle", "variant_shikraAA"],
+	["To-201 Shikra CAS", "O_Plane_Fighter_02_F", 250000, "vehicle", "variant_shikraCAS"],
 	["To-201 Shikra (Air Support)", "O_Plane_Fighter_02_Stealth_F", 1000000, "vehicle", "HIDDEN"], // no missiles or bombs
 	["To-201 Shikra (Ground Support)", "O_Plane_Fighter_02_F", 1000000, "vehicle", "HIDDEN"],
 
-	["A-164 Wipeout Light CAS", "B_Plane_CAS_01_dynamicLoadout_F", 225000, "vehicle", "variant_WipeoutLightCAS"], // BURT 7 HE Rockets and 2 bombs
+	["A-164 Wipeout CAS", "B_Plane_CAS_01_dynamicLoadout_F", 300000, "vehicle", "variant_WipeoutCAS"], // BURT 7 HE Rockets and 2 bombs
 	["A-164 Wipeout AT", "B_Plane_CAS_01_dynamicLoadout_F", 1000000, "vehicle", "variant_WipeoutMission", "HIDDEN"],
 
 	["To-199 Neophron CAS", "O_Plane_CAS_02_dynamicLoadout_F", 1000000, "vehicle", "variant_NeoMission", "HIDDEN"],
